@@ -157,6 +157,10 @@
   animation-play-state: paused;
 }
 
+/* .scroll > ul:nth-child(2) {
+  background-color: green;
+} */
+
 @keyframes loop {
   to {
     transform: translateX(calc(-100% - var(--gap)));
@@ -208,4 +212,48 @@
   aspect-ratio: 3/2;
   object-fit: cover;
   border-radius: 20px;
+}
+/* Aniket style part */
+#pat-heading {
+  text-decoration: double;
+  font-size: xx-large;
+  text-align: center;
+  margin-bottom: 4%;
+  margin-top: 3%;
+}
+#pattners {
+  display: flex;
+  flex-direction: row;
+  margin-left: 6%;
+}
+#pat-img {
+  height: 60%;
+  width: 70%;
+  border-radius: 10px;
+}
+.review {
+  margin-top: 8%;
+  margin-bottom: 10%;
+  padding-bottom: 10%;
+  display: flex;
+  flex-direction: row;
+  background-color: #b2b2b2;
+}
+.review-head {
+  height: 100%;
+  width: 20%;
+  margin-top: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-bottom: 5%;
+  padding-left: 5%;
+  padding-top: 5%;
+  padding-right: 5%;
+  border-radius: 25px;
+  background-color: #edecec;
+}
+#rev-img {
+  height: 20%;
+  width: 20%;
+  border-radius: 50%;
 }
