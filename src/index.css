@@ -10,8 +10,12 @@
 }
 .home-page4 {
   width: 100%;
-  height: 100vh;
+  height: fit-content;
   position: relative;
+}
+
+.home-page5 {
+  width: 100%;
 }
 
 .navbar {
@@ -175,6 +179,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  margin-bottom: 50px;
 }
 
 .images1 {
@@ -208,4 +213,50 @@
   aspect-ratio: 3/2;
   object-fit: cover;
   border-radius: 20px;
+}
+
+.home-page5-container {
+  background-color: #fff9ef;
+  height: fit-content;
+}
+
+.page5-heading {
+  font-size: 4rem;
+  font-weight: bolder;
+  font-family: "Source Serif 4", sans-serif;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.poems-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.poems {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background-color: white;
+  width: 80%;
+  height: fit-content;
+  overflow: hidden;
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: 1px solid #f1dba3;
+}
+
+.poem-heading {
+  font-size: clamp(1.5rem, 3.5vw, 200px);
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap; /* Prevents text from wrapping onto the next line */
+  overflow: hidden; /* Ensures overflowing text is hidden */
+  text-overflow: ellipsis; /* Adds '...' at the point where the text overflows */
+  width: 80%; /* Make the heading fill the width of its container */
 }
