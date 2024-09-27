@@ -68,7 +68,29 @@
   background-color: rgba(0, 0, 0, 0.5);
   top: 0;
   left: 0;
-  z-index: 0;
+  z-index: 1;
+}
+
+.overlay-image {
+  position: relative;
+  bottom: 0;
+}
+
+.overlay-main-image {
+  height: 100vh;
+  width: 110vw;
+  overflow: hidden;
+  object-fit: cover;
+  -webkit-mask-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 1) 30%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 1) 30%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 .video-background {
@@ -461,7 +483,7 @@
 
   .navbar-options {
     display: flex;
-    opacity: 0;
+    opacity: 1;
     max-height: 0;
     overflow: hidden;
     transition: opacity 0.05s ease-out, max-height 0.5s ease-in-out;
@@ -477,7 +499,7 @@
   }
 
   .hide {
-    opacity: 1;
+    opacity: 0;
   }
 
   .navbar-option {
@@ -493,4 +515,41 @@
   .navbar-option:hover {
     font-size: large;
   }
+}
+
+.counter-section {
+  padding: 50px 0;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: nowrap;
+}
+
+.counter-item {
+  flex: 0 0 auto;
+  margin: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease-out;
+}
+
+.counter-item.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.counter {
+  font-size: 48px;
+  font-weight: bold;
+  color: #f54b81;
+}
+
+.counter + p {
+  font-size: 18px;
+  color: #777;
 }

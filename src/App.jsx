@@ -5,7 +5,8 @@ import Homepage3 from "./components/Homepage3";
 import Homepage4 from "./components/Homepage4";
 import Homepage5 from "./components/Homepage5";
 import Navbar from "./components/Navbar";
-import Slideshow from "./components/slideshow";
+import Numbers from "./components/Numbers";
+// import Slideshow from "./components/slideshow";
 import TextTape from "./components/TextTape";
 
 function App() {
@@ -16,8 +17,9 @@ function App() {
       <Homepage2 />
       <Homepage3 />
       <TextTape />
-      <Slideshow />
+      {/* <Slideshow /> */}
       <Homepage4 />
+      <Numbers />
       <Homepage5 />
     </>
   );
