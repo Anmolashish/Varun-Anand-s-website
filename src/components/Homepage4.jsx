@@ -1,55 +1,6 @@
 export default function Homepage4() {
   return (
     <div className="home-page4">
-      <div id="container">
-        <div className="scroll" loading="lazy">
-          <ul>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-          </ul>
-
-          <ul aria-hidden="true">
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-            <li className="item">WE</li>
-          </ul>
-        </div>
-      </div>
       <div className="images">
         <div className="images1">
           <div className="image-div">
