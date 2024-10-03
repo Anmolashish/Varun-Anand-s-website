@@ -39,7 +39,7 @@ export default function Numbers() {
   return (
     <div className="numbers">
       <section className="counter-section">
-        <div className="container">
+        <div className="counter-container">
           <div className="counter-item">
             <h2 className="counter" data-target="10000"></h2>
             <p>Followers</p>
