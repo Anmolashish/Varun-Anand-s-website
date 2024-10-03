@@ -8,13 +8,11 @@ export default function Homepage1() {
         </video>
         <div className="overlay"></div>
         <div className="overlay-image">
-          <img className="overlay-main-image" src="Images/main-image.jpg" />
-          {/* <img
-            width="1"
-            height="110vw"
-            style={{ position: "absolute", top: "0", left: "0", zIndex: "2" }}
-            src="Images/image.png"
-          /> */}
+          <img
+            className="overlay-main-image"
+            loading="lazy"
+            src="Images/main-image.jpg"
+          />
         </div>
         <div className="content">
           <div className="heading-text">Varun Anand</div>
