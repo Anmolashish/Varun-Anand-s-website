@@ -147,7 +147,6 @@ p {
 }
 /* Events */
 .event {
-  margin-top: 8%;
   margin-bottom: 50px;
   padding-bottom: 10%;
   display: flex;
@@ -167,10 +166,10 @@ p {
   height: 500px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
 }
 .card:hover {
-  transform: scale(1.2);
-  transition: transform 0.4s ease-in-out;
+  transform: scale(1.1);
 }
 .header {
   position: relative;
@@ -239,7 +238,7 @@ p {
 }
 
 .home-page7 {
-  padding: 20px;
+  padding: 40px 20px;
 }
 
 .social-container {
@@ -249,6 +248,7 @@ p {
   justify-content: space-around;
   flex-wrap: wrap;
   margin-left: 3%;
+  margin-bottom: 30px;
 }
 
 .social-feed {
@@ -292,13 +292,13 @@ p {
 
   .social-feed {
     height: 400px;
-    width: 200px;
+    width: 80%;
   }
 
   .social-feed iframe,
   .social-feed .twitter-timeline,
   .social-feed blockquote {
-    height: 100%;
+    height: 40vh;
     width: 100%;
   }
 }

@@ -6,7 +6,11 @@ import Numbers from "./Numbers";
 
 import Homepage4 from "./Homepage4";
 import Homepage5 from "./Homepage5";
+import Homepage6 from "./Homepage6";
+import Homepage7 from "./Homepage7";
 import HomeContact from "./HomeContact";
+import NewsLetter from "./NewsLetter";
+import HomeFooter from "./HomeFooter";
 
 export default function Home() {
   return (
@@ -19,14 +23,12 @@ export default function Home() {
       <Homepage4 />
       <Numbers />
       <Homepage5 />
-      <HomeContact />
+
       <Homepage6 />
+      <HomeContact />
       <Homepage7 />
-      <Numbers />
-      =======
-      {/* <Home /> */}
-      <PoemSection />
-      >>>>>>> main
+      <NewsLetter />
+      <HomeFooter />
     </div>
   );
 }
