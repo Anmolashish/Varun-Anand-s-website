@@ -72,7 +72,7 @@ export default function Homepage7() {
           <h2 className="social-heading">Twitter</h2>
           <a
             className="twitter-timeline"
-            href="https://twitter.com/akshaykumar?ref_src=twsrc%5Etfw"
+            href="https://x.com/VarunAn77588633"
             data-tweet-limit="5"
             data-theme="light"
             data-chrome="noheader nofooter noborders"

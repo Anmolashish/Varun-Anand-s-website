@@ -21,7 +21,17 @@ export default function Navbar() {
   return (
     <>
       <div className="navbar">
-        <section className="logo">logo here</section>
+        <section className="logo">
+          {" "}
+          <img
+            width="82"
+            height="82"
+            src="Images/logo1.png"
+            alt="Varun Anand"
+            className="navbar-logo-image"
+            loading="lazy"
+          />
+        </section>
         <section className="tabs">
           <div>HOME</div>
           <div>ABOUT</div>
