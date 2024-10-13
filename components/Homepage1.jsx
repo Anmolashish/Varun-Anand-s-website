@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Homepage1() {
   return (
     <div className="home-page1">
@@ -8,10 +10,12 @@ export default function Homepage1() {
         </video>
         <div className="overlay"></div>
         <div className="overlay-image">
-          <img
+          <Image
             className="overlay-main-image"
-            loading="lazy"
-            src="Images/main-image.jpg"
+            src="/Images/main-image.jpg"
+            alt="Front image"
+            width={1000}
+            height={1000}
           />
         </div>
         <div className="content">

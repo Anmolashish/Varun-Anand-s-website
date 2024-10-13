@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState } from "react";
 export default function AboutPage3() {
   const [currentIcon, setCurrentIcon] = useState("youtube");

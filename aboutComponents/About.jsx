@@ -13,8 +13,6 @@ export default function About() {
       <AboutPage3 />
       <HomeContact />
       <AboutPage4 />
-      <NewsLetter />
-      <HomeFooter />
     </div>
   );
 }
