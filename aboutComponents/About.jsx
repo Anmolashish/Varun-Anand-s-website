@@ -8,7 +8,7 @@ import AboutPage4 from "./AboutPage4";
 export default function About() {
   return (
     <div>
-      <AboutPage1 />
+      <AboutPage1 heading="My Story" />
       <AboutPage2 />
       <AboutPage3 />
       <HomeContact />

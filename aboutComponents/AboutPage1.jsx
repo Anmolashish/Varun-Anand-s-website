@@ -1,4 +1,4 @@
-export default function AboutPage1() {
+export default function AboutPage1(props) {
   return (
     <div className="about-container">
       <div className="video-section">
@@ -6,9 +6,9 @@ export default function AboutPage1() {
           <source src="Video/aboutbackground.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="video-overlay"></div>
-        <div className="video-content">
-          <div className="title-text">About</div>
+        <div className="video-overlay blur"></div>
+        <div className="page-heading-section">
+          <div className="page-heading">{props.heading}</div>
         </div>
       </div>
     </div>

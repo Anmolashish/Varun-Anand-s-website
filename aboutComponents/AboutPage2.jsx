@@ -30,9 +30,9 @@ export default function AboutPage2() {
   }, []);
 
   return (
-    <div>
+    <div className="about-page2">
       <div className="about-section about-heading-container">
-        <h1 className="about-heading">My Story</h1>
+        {/* <h1 className="about-heading">My Story</h1> */}
         <div className="about-shayar-container">
           <div className="about-shayar-content">
             <div className="about-shayar-left">
@@ -62,24 +62,25 @@ export default function AboutPage2() {
       <div className="about-section about-heading-container">
         <div className="about-shayar-container">
           <div className="about-shayar-content">
-            <div className="about-shayar-right">
-              <h2 className="about-shayar-title">A Poet of Ghazals</h2>
-              <p className="about-shayar-text">
-                Varun Anand's ghazals evoke deep emotions and take listeners on
-                a poetic journey. With his unique style, he crafts soulful
-                ghazals that blend tradition with modern emotion, leaving a
-                lasting impact on the hearts of his audience verses that weave
-                together stories, emotions, and vivid imagery.
-              </p>
-              <button className="read-more-button">Read More</button>
-            </div>
-            <div className="about-shayar-left">
+            <div className="about-shayar-left tilt-right">
               <img
                 src="Images/scroll-image4.jpg"
                 alt="Varun Anand"
                 className="about-shayar-image"
                 loading="lazy"
               />
+            </div>
+
+            <div className="about-shayar-right tilt-left">
+              <h2 className="about-shayar-title">A Poet of Ghazals</h2>
+              <p className="about-shayar-text">
+                Varun Anands ghazals evoke deep emotions and take listeners on a
+                poetic journey. With his unique style, he crafts soulful ghazals
+                that blend tradition with modern emotion, leaving a lasting
+                impact on the hearts of his audience verses that weave together
+                stories, emotions, and vivid imagery.
+              </p>
+              <button className="read-more-button">Read More</button>
             </div>
           </div>
         </div>
