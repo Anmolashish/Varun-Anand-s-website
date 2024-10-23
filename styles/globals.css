@@ -1572,3 +1572,67 @@ video {
 .navbar-logo-image {
   border-radius: 10px;
 }
+.design-head {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.design-style {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.shayari-page {
+  text-align: center;
+  padding: 50px;
+}
+
+.shayari-heading {
+  font-size: 2.5rem;
+  color: #b71c1c;
+  margin-bottom: 50px;
+  font-family: "Great Vibes", cursive;
+  text-shadow: 2px 2px #d4a373;
+}
+
+.shayari-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 0 50px;
+  margin-top: 20px;
+}
+
+.shayari-cover {
+  background-color: #fff4e0;
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.shayari-cover:hover {
+  transform: scale(1.05);
+}
+
+.cover-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.shayari-title {
+  font-size: 1.5rem;
+  margin-top: 15px;
+  color: #7b1fa2;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .shayari-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 20px;
+  }
+}
