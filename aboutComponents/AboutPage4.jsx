@@ -6,8 +6,8 @@ export default function AboutPage4() {
         Watch Varun Anand's Live Shayari Recital
       </h1>
       <div className="recital-section">
-        <div className="video-content">
-          <div className="video-container">
+        <div className="youtube-video">
+          <div className="video-container youtube-link">
             <iframe
               src="https://www.youtube.com/embed/73-12V-5LWQ?si=YPXxcmZxe5Nl5gyp"
               title="YouTube video player"

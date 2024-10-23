@@ -16,6 +16,8 @@ export default function Homepage1() {
             alt="Front image"
             width={1000}
             height={1000}
+            placeholder="blur"
+            blurDataURL="/Images/main-image.jpg"
           />
         </div>
         <div className="content">

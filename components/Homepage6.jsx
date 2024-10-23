@@ -1,4 +1,8 @@
+import Image from "next/image";
+
 export default function Homepage6() {
+  const width = "400";
+  const height = "400";
   return (
     <div className="home-page6">
       <div id="pat-heading">
@@ -7,7 +11,13 @@ export default function Homepage6() {
       <div className="event">
         <div className="card">
           <div className="header">
-            <img src="Images/review.jpeg" id="rev-img" loading="lazy" />
+            <Image
+              src="/Images/review.jpeg"
+              id="rev-img"
+              alt="event-image"
+              width={width}
+              height={height}
+            />
           </div>
           <div className="info">
             <h3 className="title">Shayar Wins Prestigious Poetry Award</h3>
@@ -16,7 +26,7 @@ export default function Homepage6() {
               outstanding contributions to poetry. Celebrate with us!{" "}
             </p>
           </div>
-          <div className="footer">
+          <div className="card-footer">
             <p className="tag">2024-09-20</p>
             <button type="button" className="action">
               Join{" "}
@@ -25,7 +35,13 @@ export default function Homepage6() {
         </div>
         <div className="card">
           <div className="header">
-            <img src="Images/review.jpeg" id="rev-img" loading="lazy" />
+            <Image
+              src="/Images/review.jpeg"
+              id="rev-img"
+              alt="event-image"
+              width={width}
+              height={height}
+            />
           </div>
           <div className="info">
             <p className="title">Shayar Wins Prestigious Poetry Award</p>
@@ -34,7 +50,7 @@ export default function Homepage6() {
               outstanding contributions to poetry. Celebrate with us!{" "}
             </p>
           </div>
-          <div className="footer">
+          <div className="card-footer">
             <p className="tag">2024-09-20</p>
             <button type="button" className="action">
               Join{" "}
@@ -43,7 +59,13 @@ export default function Homepage6() {
         </div>
         <div className="card">
           <div className="header">
-            <img src="Images/review.jpeg" id="rev-img" loading="lazy" />
+            <Image
+              src="/Images/review.jpeg"
+              id="rev-img"
+              alt="event-image"
+              width={width}
+              height={height}
+            />
           </div>
           <div className="info">
             <p className="title">Shayar Wins Prestigious Poetry Award</p>
@@ -52,7 +74,7 @@ export default function Homepage6() {
               outstanding contributions to poetry. Celebrate with us!{" "}
             </p>
           </div>
-          <div className="footer">
+          <div className="card-footer">
             <p className="tag">2024-09-20</p>
             <button type="button" className="action">
               Join{" "}
