@@ -8,7 +8,7 @@ export default function ShayarPage2() {
       <h1 className="shayari-heading">Explore Beautiful Shayari Collections</h1>
       <div className="shayari-grid">
         <div className="shayari-cover">
-          <Link href="shayarsec/shayarPage/hello">
+          <Link href="shayarsec/layout.jsx">
             <img
               src="Images/mohabbat.jpeg"
               alt="Mohabbat Shayari"
