@@ -1,5 +1,6 @@
 import Link from "next/link";
 export default function ShayarPage2() {
+  const value = ["mohabbat", "sad-shayari"];
   return (
     <div className="shayari-page">
       <div className="design-head">
@@ -8,7 +9,7 @@ export default function ShayarPage2() {
       <h1 className="shayari-heading">Explore Beautiful Shayari Collections</h1>
       <div className="shayari-grid">
         <div className="shayari-cover">
-          <Link href="shayarsec/layout.jsx">
+          <Link href={`shayari/${value[0]}`}>
             <img
               src="Images/mohabbat.jpeg"
               alt="Mohabbat Shayari"
@@ -18,11 +19,13 @@ export default function ShayarPage2() {
           <h2 className="shayari-title">Mohabbat Shayari</h2>
         </div>
         <div className="shayari-cover">
-          <img
-            src="Images/sad.jpeg"
-            alt="Sad Shayari"
-            className="cover-image"
-          />
+          <Link href={`shayari/${value[1]}`}>
+            <img
+              src="Images/sad.jpeg"
+              alt="Sad Shayari"
+              className="cover-image"
+            />
+          </Link>
           <h2 className="shayari-title">Sad Shayari</h2>
         </div>
         <div className="shayari-cover">
