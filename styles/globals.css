@@ -1970,3 +1970,117 @@ blockquote cite {
   background-size: 55px 55px;
   background-color: rgb(161, 77, 46);
 } */
+.layout-shayari {
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.shayari-container {
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+.shayari-number {
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 2em;
+}
+
+.shayari-text {
+  margin: 0;
+  font-size: 2em;
+}
+
+.shayari-author {
+  font-size: 0.9em;
+  color: gray;
+  margin: 5px 0;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.button {
+  padding: 5px 10px;
+}
+
+.design-style1 {
+  width: 700px;
+  align-items: center;
+  margin-right: 100px;
+}
+/*share button*/
+/* From Uiverse.io by vinodjangid07 */
+.share-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 110px;
+  height: 50px;
+  position: relative;
+  border: 1px solid #81aca0;
+  border-radius: 30px;
+  background-color: #af4c4c;
+  overflow: hidden;
+  cursor: pointer;
+  color: white;
+}
+.button__text {
+  width: 80px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button__icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #af4c4c;
+  position: absolute;
+  right: 0;
+  transition: all 0.3s;
+}
+.button__icon svg {
+  width: 18px;
+}
+.share-button:hover .button__icon {
+  width: 100%;
+}
+/*Copy button*/
+.button2 {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid #af4c4c;
+  text-align: left;
+  vertical-align: top;
+  padding: calc(0.875rem - 3px) 63px calc(0.875rem - 3px) 15px;
+  background-color: #00000000;
+  font-size: 13px;
+  letter-spacing: 0.16px;
+  min-height: 48px;
+  line-height: 1.29;
+  color: #af4c4c;
+  font-weight: 70;
+  border-radius: 30px;
+  transition: background 70ms cubic-bezier(0, 0, 0.38, 0.9),
+    box-shadow 70ms cubic-bezier(0, 0, 0.38, 0.9),
+    border-color 70ms cubic-bezier(0, 0, 0.38, 0.9),
+    outline 70ms cubic-bezier(0, 0, 0.38, 0.9);
+}
+.button2:hover {
+  background-color: #af4c4c;
+  color: #fff;
+}
+.quote {
+  width: 0.5em;
+  height: 0.5em;
+}
