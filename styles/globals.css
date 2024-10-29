@@ -10,6 +10,69 @@
   height: 100vh;
   z-index: 1;
 }
+
+.home-page2 {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.image-about-section {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.about-section-image {
+  width: 80%;
+  height: 30vh;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: 0% 55%;
+  border-radius: 10px;
+}
+
+.text-about-section {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-heading {
+  font-size: 40px;
+  font-weight: 900;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.about-description {
+  font-size: 20px;
+  width: 80%;
+}
+
+@media (max-width: 768px) {
+  .home-page2 {
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .text-about-section {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .image-about-section {
+    width: 100%;
+  }
+}
+
 .home-page4 {
   width: 100%;
   height: fit-content;
@@ -177,6 +240,8 @@
   user-select: none;
   padding-block: 18px;
 
+  background-color: #af4c4ca3;
+
   --gap: 3rem;
   display: flex;
   gap: var(--gap);
@@ -212,6 +277,9 @@
   display: flex;
   align-items: center;
   font-size: 2rem;
+  font-weight: 400;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   white-space: nowrap;
   color: #000000;
 }
@@ -755,7 +823,7 @@ html {
 /* Aniket style part */
 #pat-heading {
   text-decoration: double;
-  font-size: clamp(20px, 3vw, 200px);
+  font-size: 28px;
   text-align: center;
   margin-bottom: 4%;
   margin-top: 3%;
@@ -774,11 +842,6 @@ html {
   width: auto;
   max-width: 70%;
   border-radius: 10px;
-}
-
-#pat-heading {
-  text-align: center;
-  font-size: xx-large;
 }
 
 .review-container {
@@ -932,10 +995,19 @@ p {
   color: rgb(38 50 56);
   letter-spacing: 0;
   line-height: 1.375;
-  font-weight: 600;
-  font-size: clamp(5px, 3vw, 20px);
-  margin-bottom: 0.5rem;
+  font-weight: 700;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: clamp(20px, 3vw, 30px);
+  margin-bottom: 0.2rem;
 }
+
+.event-description {
+  font-size: 1rem;
+  font-weight: 100;
+  margin-top: 10px;
+}
+
 .card-footer {
   padding: 0.75rem;
   border: 1px solid rgb(236 239 241);
@@ -1175,12 +1247,10 @@ video {
 
 /* Heading styles */
 #pat-heading {
-  text-align: center;
   margin-top: 60px;
 }
 
 #pat-heading h1 {
-  font-size: 2.5rem;
   font-weight: bold;
   color: #000000;
 }
@@ -1217,7 +1287,6 @@ video {
 
 /* Adjust heading styling */
 #pat-heading h1 {
-  font-size: 2rem;
   color: #000000;
 }
 
@@ -1238,10 +1307,6 @@ video {
   .follower-count {
     font-size: 1.5rem;
   }
-
-  #pat-heading h1 {
-    font-size: 2.5rem;
-  }
 }
 
 /* For screens larger than 1024px (desktops and larger tablets) */
@@ -1257,10 +1322,6 @@ video {
 
   .follower-count {
     font-size: 2rem;
-  }
-
-  #pat-heading h1 {
-    font-size: 3rem;
   }
 }
 
@@ -1281,8 +1342,8 @@ video {
     font-size: 1rem;
   }
 
-  #pat-heading h1 {
-    font-size: 1.5rem;
+  #pat-heading {
+    margin: 50px 0px;
   }
 }
 

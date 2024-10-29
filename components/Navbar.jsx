@@ -50,7 +50,6 @@ export default function Navbar() {
               SHAYARI
             </Link>
           </div>
-          <div>SHAYARI</div>
           <div>BOOKING</div>
           <div>GALLARY</div>
         </section>
