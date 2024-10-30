@@ -1,23 +1,48 @@
 import Link from "next/link";
 export default function ShayarPage2() {
   const value = ["mohabbat", "sad-shayari"];
+  const data = [
+    {
+      id: 1,
+      link: "mohabbat",
+      heading: "Mohabbat Shayari",
+      imgsrc: "mohabbat.jpeg",
+    },
+    {
+      id: 2,
+      link: "sad-shayari",
+      heading: "Sad Shayari",
+      imgsrc: "mohabbat.jpeg",
+    },
+    {
+      id: 3,
+      link: "Break-up",
+      heading: "Breakup Shayari",
+      imgsrc: "mohabbat.jpeg",
+    },
+  ];
   return (
     <div className="shayari-page">
       <div className="design-head">
         <img src="Images/design.png" alt="DESIGN" className="design-style" />
       </div>
       <h1 className="shayari-heading">Explore Beautiful Shayari Collections</h1>
+
       <div className="shayari-grid">
-        <div className="shayari-cover">
-          <Link href={`shayari/${value[0]}`}>
-            <img
-              src="Images/mohabbat.jpeg"
-              alt="Mohabbat Shayari"
-              className="cover-image"
-            />
-          </Link>
-          <h2 className="shayari-title">Mohabbat Shayari</h2>
-        </div>
+        {data.map((element) => {
+          return (
+            <div className="shayari-cover" key={element.id}>
+              <Link href={`shayari/${element.link}`}>
+                <img
+                  src={`Images/${element.imgsrc}`}
+                  alt="Mohabbat Shayari"
+                  className="cover-image"
+                />
+              </Link>
+              <h2 className="shayari-title">{element.heading}</h2>
+            </div>
+          );
+        })}
         <div className="shayari-cover">
           <Link href={`shayari/${value[1]}`}>
             <img
