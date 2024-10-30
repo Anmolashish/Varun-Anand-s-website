@@ -45,6 +45,12 @@ export default function Navbar() {
               ABOUT
             </Link>
           </div>
+         
+          <div>
+            <Link className="nav-tabs" href="/Gallary">
+              GALLARY
+            </Link>
+          </div>
           <div>SHAYARI</div>
         </section>
         <section className="contact-button">
