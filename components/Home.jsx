@@ -16,9 +16,9 @@ export default function Home() {
   return (
     <div>
       <Homepage1 />
-      {/* <Homepage2 /> */}
+      <Homepage2 />
       <Homepage3 />
-      <TextTape />
+      {/* <TextTape /> */}
       {/* <Slideshow /> */}
       <Homepage4 />
       <Numbers />

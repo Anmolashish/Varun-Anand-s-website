@@ -15,6 +15,9 @@ const gowunBatang = Gowun_Batang({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+        <title>Varun Anand - Portfolio</title>
+      </Head>
       <body className={`${gowunBatang.variable} `}>
         <Navbar />
         {children}

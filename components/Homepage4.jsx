@@ -1,72 +1,92 @@
+import Image from "next/image";
+
 export default function Homepage4() {
+  const width = 500;
+  const height = 500;
   return (
     <div className="home-page4">
       <div className="images">
         <div className="images1">
           <div className="image-div">
-            <img
+            <Image
               className="image"
               loading="lazy"
-              src="Images/scroll-image1.jpg"
+              src="/Images/scroll-image1.jpg"
               alt="image"
+              width={width}
+              height={height}
             />
           </div>
           <div className="image-div">
-            <img
+            <Image
               className="image"
               loading="lazy"
-              src="Images/scroll-image2.jpg"
+              src="/Images/scroll-image2.jpg"
               alt="image"
+              width={width}
+              height={height}
             />
           </div>
           <div className="image-div">
-            <img
+            <Image
               className="image"
               loading="lazy"
-              src="Images/scroll-image3.jpg"
+              src="/Images/scroll-image3.jpg"
               alt="image"
+              width={width}
+              height={height}
             />
           </div>
           <div className="image-div">
-            <img
+            <Image
               className="image"
               loading="lazy"
-              src="Images/scroll-image4.jpg"
+              src="/Images/scroll-image4.jpg"
               alt="image"
+              width={width}
+              height={height}
             />
           </div>
         </div>
         <div className="images2">
           <div className="image-div">
-            <img
+            <Image
               className="image"
               loading="lazy"
-              src="Images/scroll-image5.jpg"
+              src="/Images/scroll-image5.jpg"
               alt="image"
+              width={width}
+              height={height}
             />
           </div>
           <div className="image-div">
-            <img
+            <Image
               className="image"
               loading="lazy"
-              src="Images/scroll-image6.jpg"
+              src="/Images/scroll-image6.jpg"
               alt="image"
+              width={width}
+              height={height}
             />
           </div>
           <div className="image-div">
-            <img
+            <Image
               className="image"
               loading="lazy"
-              src="Images/scroll-image7.jpg"
+              src="/Images/scroll-image7.jpg"
               alt="image"
+              width={width}
+              height={height}
             />
           </div>
           <div className="image-div">
-            <img
+            <Image
               className="image"
               loading="lazy"
-              src="Images/scroll-image8.jpg"
+              src="/Images/scroll-image8.jpg"
               alt="image"
+              width={width}
+              height={height}
             />
           </div>
         </div>
