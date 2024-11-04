@@ -23,8 +23,12 @@ export default function ShayarPage2() {
       <div className="shayari-grid">
         {data.map((element) => {
           return (
-            <Link href={`shayari/${element.link}`} className="nav-tabs">
-              <div className="shayari-cover" key={element.id}>
+            <Link
+              href={`shayari/${element.link}`}
+              className="nav-tabs"
+              key={element.id}
+            >
+              <div className="shayari-cover">
                 <Image
                   src={`/Images/${element.imgsrc}`}
                   alt="Mohabbat Shayari"

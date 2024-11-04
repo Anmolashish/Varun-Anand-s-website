@@ -3,20 +3,19 @@ import { useContext, useEffect, useState } from "react";
 import { ShayariData } from "context/ShayariContext";
 import ShayariCalling from "./ShayariCalling";
 
-export default function ShayarPage3(props) {
-  const { basicData, getNextChunkByKeyword, loadMoreForKeyword } =
+export default function ShayariPage3(props) {
+  const { basicData, getNextChunkByKeyword, loadMoreForKeyword, visibleData } =
     useContext(ShayariData);
   const [shayari, setShayari] = useState([]);
 
   useEffect(() => {
-    const initialShayari = getNextChunkByKeyword(props.heading);
+    // Check if there's already visible data for this section
+    const existingShayari =
+      visibleData[props.heading] || getNextChunkByKeyword(props.heading);
 
-    if (initialShayari.length > 0) {
-      setShayari(initialShayari);
-    } else {
-      alert("no more data availabe there");
-    }
-  }, [props.heading, getNextChunkByKeyword]);
+    // Set the shayari based on whether there's existing data or loading the initial chunk
+    setShayari(existingShayari);
+  }, [props.heading, getNextChunkByKeyword, visibleData]);
 
   if (!basicData[props.heading]) return null;
 

@@ -102,7 +102,8 @@ export const ShayariProvider = ({ children }) => {
     },
   ];
 
-  // Step 1: Group shayaris by keywords
+  const CHUNK_SIZE = 2;
+
   const keywordGroups = shayaris.reduce((acc, shayari) => {
     shayari.keywords.forEach((keyword) => {
       if (!acc[keyword]) {
@@ -114,18 +115,12 @@ export const ShayariProvider = ({ children }) => {
   }, {});
 
   const [visibleData, setVisibleData] = useState({});
-  const [paginationIndexes, setPaginationIndexes] = useState(
-    Object.keys(keywordGroups).reduce((acc, keyword) => {
-      acc[keyword] = 0; // Start each keyword's index at 0
-      return acc;
-    }, {})
-  );
-  const CHUNK_SIZE = 2; // Static chunk size for simplicity
+  const [paginationIndexes, setPaginationIndexes] = useState({});
 
   function getNextChunkByKeyword(keyword) {
     if (!keywordGroups[keyword]) return [];
 
-    const startIndex = paginationIndexes[keyword];
+    const startIndex = paginationIndexes[keyword] || 0; // Initialize if undefined
     const endIndex = startIndex + CHUNK_SIZE;
     return keywordGroups[keyword].slice(startIndex, endIndex);
   }
@@ -133,6 +128,7 @@ export const ShayariProvider = ({ children }) => {
   function loadMoreForKeyword(keyword) {
     const newChunk = getNextChunkByKeyword(keyword);
 
+    // Only update if new data exists
     if (newChunk.length > 0) {
       setVisibleData((prevData) => ({
         ...prevData,
@@ -142,10 +138,12 @@ export const ShayariProvider = ({ children }) => {
       // Update pagination index for the next load
       setPaginationIndexes((prevIndexes) => ({
         ...prevIndexes,
-        [keyword]: prevIndexes[keyword] + CHUNK_SIZE,
+        [keyword]: (prevIndexes[keyword] || 0) + CHUNK_SIZE,
       }));
     } else {
       console.log(`No more data to load for '${keyword}'`);
+      // Optional: set to an initial state if needed
+      // For example, reset to the initial state or keep the last state
     }
   }
 
@@ -176,6 +174,7 @@ export const ShayariProvider = ({ children }) => {
         basicData,
         loadMoreForKeyword,
         getNextChunkByKeyword,
+        visibleData,
       }}
     >
       {children}
