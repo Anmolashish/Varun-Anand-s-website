@@ -46,18 +46,21 @@ export default function Navbar() {
             </Link>
           </div>
           <div>
-            <Link className="nav-tabs" href="/shayar">
+            <Link className="nav-tabs" href="/shayari">
               SHAYARI
             </Link>
           </div>
-          <div>BOOKING</div>
-         
+          <div>
+            <Link className="nav-tabs" href="/booking">
+              BOOKING
+            </Link>
+          </div>
+
           <div>
             <Link className="nav-tabs" href="/gallery">
               GALLARY
             </Link>
           </div>
-          <div>SHAYARI</div>
         </section>
         <section className="contact-button">
           {" "}
@@ -74,10 +77,32 @@ export default function Navbar() {
       </div>
       <div className="navbar-options hide">
         <div className="navbar options">
-          <div className="navbar-option">Home</div>
-          <div className="navbar-option">About</div>
-          <div className="navbar-option">Writtings</div>
-          <div className="navbar-option">Contact</div>
+          <div className="navbar-option">
+            <Link className="nav-tabs" href="/">
+              HOME
+            </Link>
+          </div>
+          <div className="navbar-option">
+            <Link className="nav-tabs" href="/about">
+              ABOUT
+            </Link>
+          </div>
+          <div className="navbar-option">
+            <Link className="nav-tabs" href="/shayari">
+              SHAYARI
+            </Link>
+          </div>
+          <div className="navbar-option">
+            <Link className="nav-tabs" href="/booking">
+              BOOKING
+            </Link>
+          </div>
+
+          <div className="navbar-option">
+            <Link className="nav-tabs" href="/gallery">
+              GALLARY
+            </Link>
+          </div>
         </div>
       </div>
     </>

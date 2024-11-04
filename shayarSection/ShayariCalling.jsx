@@ -2,17 +2,17 @@ import React from "react";
 import Link from "next/link";
 
 export default function ShayariCalling(props) {
+  const copyText = () => {
+    navigator.clipboard.writeText(props.shayari);
+    alert("Shayari copied!");
+  };
   return (
     <>
       <div className="shayari-container">
         <div style={{ display: "flex", alignItems: "center" }}>
           <span className="shayari-number">{props.id}</span>
           <div>
-            <span className="shayari-text">
-              <img src="/Images/lquote.png" className="quote" />
-              {props.shayariname}
-              <img src="/Images/rquote.png" className="quote" />
-            </span>
+            <span className="shayari-text">{props.shayariname}</span>
             <p className="shayari-author">- Varun Anand</p>
           </div>
         </div>
@@ -76,8 +76,15 @@ export default function ShayariCalling(props) {
               </button>
             </div>
           </a>
-          <button className="button2">Copy</button>
-          <Link href={`mohabbat/shayar1`}>
+          <button className="button2" onClick={copyText}>
+            Copy
+          </button>
+          <Link
+            href={`${props.slug}/${props.shayariname
+              .toLowerCase()
+              .replace(/[,\s]+/g, "-")
+              .replace(/[^\w\-]+/g, "")}`}
+          >
             <button className="button2">More...</button>
           </Link>
         </div>

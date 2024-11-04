@@ -1843,7 +1843,7 @@ video {
   color: #fff;
 }
 
-.quote::before {
+.quote-section::before {
   content: "&";
   font-size: 120vh;
   color: rgba(184, 40, 40, 0.1);
@@ -1851,7 +1851,7 @@ video {
   top: -20vh;
 }
 
-.quote {
+.quote-section {
   position: relative;
   height: 100vh;
   overflow: hidden;
@@ -1990,6 +1990,21 @@ blockquote cite {
 .shayari-text {
   margin: 0;
   font-size: 2em;
+}
+
+.shayari-text::before,
+.shayari-text::after {
+  content: "“ ";
+  font-family: Georgia;
+  font-size: 2.5rem;
+  /* margin: -2rem 0 0 -4rem; */
+  /* position: absolute; */
+  opacity: 0.5;
+}
+
+.shayari-text::after {
+  content: " ”";
+  /* margin: -1rem -4rem 0 0; */
 }
 
 .shayari-author {
@@ -2174,11 +2189,12 @@ textarea {
 
 @media (max-width: 768px) {
   .formContainer {
-      flex-direction: column;
+    flex-direction: column;
   }
-  
-  .formImage, .formContent {
-      width: 100%;
+
+  .formImage,
+  .formContent {
+    width: 100%;
   }
 }
 /*gallary*/
@@ -2239,7 +2255,11 @@ textarea {
   font-size: 14px;
   color: white;
   opacity: 0;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
   transition: opacity 0.3s;
 }
 
@@ -2269,14 +2289,15 @@ textarea {
   left: 0; /* Align to the left */
   right: 0; /* Align to the right */
   bottom: 0; /* Align to the bottom */
-  background-image: url('/Images/scroll-image1.jpg'); /* Background image */
+  background-image: url("/Images/scroll-image1.jpg"); /* Background image */
   background-size: cover; /* Cover the entire area */
   background-position: center; /* Center the image */
   filter: blur(5px); /* Blur the image */
   z-index: 1; /* Behind the text */
 }
 
-.intro-gallery h1, .intro-gallery p {
+.intro-gallery h1,
+.intro-gallery p {
   position: relative; /* Position text above the background */
   z-index: 2; /* Above the background */
 }
@@ -2318,3 +2339,10 @@ textarea {
   }
 }
 
+.shayari-data {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
