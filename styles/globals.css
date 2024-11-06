@@ -383,6 +383,13 @@
   width: 80%; /* Make the heading fill the width of its container */
 }
 
+.description {
+  white-space: nowrap; /* Prevents text from wrapping onto the next line */
+  overflow: hidden; /* Ensures overflowing text is hidden */
+  text-overflow: ellipsis; /* Adds '...' at the point where the text overflows */
+  width: 80%;
+}
+
 .see-more {
   width: 100%;
   display: flex;

@@ -1,38 +1,12 @@
+"use client";
+import { useContext } from "react";
 import PoemsCalling from "./PoemsCalling";
+import { ShayariData } from "context/ShayariContext";
 
 export default function Homepage5() {
-  const poems = [
-    {
-      id: 1,
-      title: "Poem 1",
-      content: "This is the content of poem 1.",
-    },
-    {
-      id: 2,
-      title: "Poem 2",
-      content: "This is the content of poem 2.",
-    },
-    {
-      id: 3,
-      title: "Poem 3",
-      content: "This is the content of poem 3.",
-    },
-    {
-      id: 4,
-      title: "Poem 4",
-      content: "This is the content of poem 4.",
-    },
-    {
-      id: 5,
-      title: "Poem 5 ",
-      content: "This is the content of poem 5.",
-    },
-    {
-      id: 6,
-      title: "Poem 6",
-      content: "This is the content of poem 6.",
-    },
-  ];
+  const { shayaris } = useContext(ShayariData);
+
+  const poems = [...shayaris];
 
   return (
     <div className="home-page5">
@@ -45,8 +19,8 @@ export default function Homepage5() {
             .map((poem) => (
               <PoemsCalling
                 key={poem.id}
-                heading={poem.title}
-                description={poem.content}
+                heading={poem.shayariname}
+                description={poem.shayari}
               />
             ))}
         </div>

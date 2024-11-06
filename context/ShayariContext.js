@@ -48,7 +48,8 @@ export const ShayariProvider = ({ children }) => {
       id: 1,
       shayariname: "Sad shayari , Mohabbat shayari, Break-up shayari",
       keywords: ["mohabbat", "sad", "break-up"],
-      shayari: " HELLO THERE",
+      shayari:
+        " HELLO THERE gheeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
       urdushayari: "",
       sharelink: "",
     },
@@ -96,7 +97,7 @@ export const ShayariProvider = ({ children }) => {
       id: 7,
       shayariname: "Mohabbat shayari",
       keywords: ["mohabbat"],
-      shayari: " HELLO THERE",
+      shayari: " HELLO THERE ",
       urdushayari: "",
       sharelink: "",
     },

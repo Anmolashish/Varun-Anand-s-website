@@ -4,6 +4,7 @@ import { Gowun_Batang } from "next/font/google";
 import Navbar from "components/Navbar";
 import NewsLetter from "components/NewsLetter";
 import HomeFooter from "components/HomeFooter";
+import { ShayariProvider } from "context/ShayariContext";
 
 // Load the Gowun Batang font
 const gowunBatang = Gowun_Batang({
@@ -20,7 +21,7 @@ export default function RootLayout({ children }) {
       </Head>
       <body className={`${gowunBatang.variable} `}>
         <Navbar />
-        {children}
+        <ShayariProvider>{children}</ShayariProvider>
         <NewsLetter />
         <HomeFooter />
       </body>
