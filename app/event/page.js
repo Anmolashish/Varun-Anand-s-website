@@ -1,13 +1,12 @@
-import React from 'react'
-import Image from 'next/image'
-
+import React from 'react';
+import Image from 'next/image';
 
 export default function Event() {
   return (
     <div className="formContainer">
       <div className="formImage">
         <Image 
-          src="/IMG-20240925-WA0007.jpg" 
+          src="/Images/scroll-image1.jpg" 
           alt="Event Booking" 
           layout="fill" 
           objectFit="cover"
@@ -47,5 +46,5 @@ export default function Event() {
         </form>
       </div>
     </div>
-  )
+  );
 }
