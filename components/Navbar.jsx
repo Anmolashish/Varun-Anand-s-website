@@ -48,17 +48,17 @@ export default function Navbar() {
             </Link>
           </div>
           <div>
-            <Link className="nav-tabs" href="/shayar">
+            <Link className="nav-tabs" href="/shayari">
               SHAYARI
             </Link>
           </div>
           <div>BOOKING</div>
+         
           <div>
             <Link className="nav-tabs" href="/gallery">
               GALLERY
             </Link>
           </div>
-          <div>SHAYARI</div>
         </section>
         <section className="contact-button">
           <div className="button" onClick={openPopup}>
@@ -78,7 +78,7 @@ export default function Navbar() {
         <div className="navbar options">
           <div className="navbar-option">Home</div>
           <div className="navbar-option">About</div>
-          <div className="navbar-option">Writings</div>
+          <div className="navbar-option">Writtings</div>
           <div className="navbar-option">Contact</div>
         </div>
       </div>

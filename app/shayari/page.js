@@ -1,10 +1,10 @@
-import ShayarPage3 from "ShayarSection/ShayarPage3";
+import Shayar from "@/shayarComponents/Shayar";
 import React from "react";
 
-export default function shayarsec() {
+export default function shayarisec() {
   return (
     <div>
-      <ShayarPage3 />
+      <Shayar />
     </div>
   );
 }
