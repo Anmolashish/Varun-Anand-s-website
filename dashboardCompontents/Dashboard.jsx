@@ -1,19 +1,41 @@
-import React from "react";
+"use client";
+import React, { useContext } from "react";
+import { ShayariData } from "context/ShayariContext";
+import DashboardTable from "./DashboardTable";
+import Link from "next/link";
 
-export default function dashboard() {
+export default function Dashboard(props) {
+  const { formData } = useContext(ShayariData);
+  const heading = formData[props.id].heading;
+  const columns = [...formData[props.id].headers];
+  const link = formData[props.id].links;
   return (
-    <div className="dashboard">
-      <h1 xlassname="dashboard-heading">Dashboard</h1>
-      <div className="main-dashboard">
-        <div className="dashboard-options">
-          <div className="dashboard-options-heading">Options: </div>
-          <div className="dashboard-options-content">
-            <div className="dashboard-option">Option 1</div>
-            <div className="dashboard-option">Option 2</div>
-            <div className="dashboard-option">Option 3</div>
-          </div>
+    <div className="dashboard-container">
+      <div className="dashboard-content-header">
+        <div className="dashboard-options-heading dashboard-container-heading">
+          {heading}
         </div>
-        <div className="dashboard-data"></div>
+        <Link className="nav-tabs" href={link}>
+          <div className="form-button">
+            <div className="form-button">{props.id} form</div>
+          </div>
+        </Link>
+      </div>
+      <div className="dashboard-table-container">
+        <table className="dashboard-data-table">
+          <thead className="dashboard-table-header">
+            <tr>
+              <th className="table-header-cell">S.no</th>
+              {columns.map((col) => (
+                <th key={col.key} className="table-header-cell">
+                  {col.label}
+                </th>
+              ))}
+              <th className="table-header-cell">Delete</th>
+            </tr>
+          </thead>
+          <DashboardTable data={formData[props.id].data} />
+        </table>
       </div>
     </div>
   );

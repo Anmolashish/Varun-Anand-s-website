@@ -18,7 +18,13 @@ const gowunBatang = Gowun_Batang({
 export default function RootLayout({ children }) {
   const pathname = usePathname();
 
-  const hiddenPaths = ["/dashboard", "/dashboard/contact"];
+  const hiddenPaths = [
+    "/dashboard",
+    "/dashboard/contact",
+    "/dashboard/booking",
+    "/dashboard/events",
+    "/dashboard/shayari",
+  ];
   const shouldHideComponents = hiddenPaths.includes(pathname);
 
   return (

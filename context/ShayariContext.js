@@ -48,10 +48,8 @@ export const ShayariProvider = ({ children }) => {
       id: 1,
       shayariname: "Sad shayari , Mohabbat shayari, Break-up shayari",
       keywords: ["mohabbat", "sad", "break-up"],
-      shayari:
-        " HELLO THERE gheeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+      shayari: " HELLO THERE ",
       urdushayari: "",
-      sharelink: "",
     },
     {
       id: 2,
@@ -59,7 +57,6 @@ export const ShayariProvider = ({ children }) => {
       keywords: ["mohabbat", "break-up"],
       shayari: " HELLO THERE",
       urdushayari: "",
-      sharelink: "",
     },
     {
       id: 3,
@@ -67,7 +64,6 @@ export const ShayariProvider = ({ children }) => {
       keywords: ["mohabbat", "sad"],
       shayari: " HELLO THERE",
       urdushayari: "",
-      sharelink: "",
     },
     {
       id: 4,
@@ -75,7 +71,6 @@ export const ShayariProvider = ({ children }) => {
       keywords: ["break-up", "sad"],
       shayari: " HELLO THERE",
       urdushayari: "",
-      sharelink: "",
     },
     {
       id: 5,
@@ -83,7 +78,6 @@ export const ShayariProvider = ({ children }) => {
       keywords: ["sad"],
       shayari: " HELLO THERE",
       urdushayari: "",
-      sharelink: "",
     },
     {
       id: 6,
@@ -91,7 +85,6 @@ export const ShayariProvider = ({ children }) => {
       keywords: ["break-up"],
       shayari: " HELLO THERE",
       urdushayari: "",
-      sharelink: "",
     },
     {
       id: 7,
@@ -99,7 +92,6 @@ export const ShayariProvider = ({ children }) => {
       keywords: ["mohabbat"],
       shayari: " HELLO THERE ",
       urdushayari: "",
-      sharelink: "",
     },
   ];
 
@@ -167,6 +159,54 @@ export const ShayariProvider = ({ children }) => {
     },
   };
 
+  const formData = {
+    shayari: {
+      heading: "Shayari",
+      headers: [
+        { key: "shayariname", label: "Shayari name" },
+        { key: "keywords", label: "Keywords" },
+        { key: "shayari", label: "Shayari" },
+        { key: "urdushayari", label: "Urdu Shayari" },
+      ],
+      data: [...shayaris],
+      links: "/dashboard/shayari/shayari-form",
+    },
+    booking: {
+      heading: "Booking",
+      headers: [
+        { key: "name", label: "Name" },
+        { key: "email", label: "Email" },
+        { key: "phone", label: "Phone" },
+        { key: "date", label: "Date" },
+        { key: "location", label: "Location" },
+        { key: "message", label: "Message" },
+      ],
+      data: [],
+      links: "/booking",
+    },
+    contact: {
+      heading: "Contact",
+      headers: [
+        { key: "name", label: "Name" },
+        { key: "email", label: "Email" },
+        { key: "message", label: "Message" },
+      ],
+      data: [],
+      links: "/",
+    },
+    events: {
+      heading: "Events",
+      headers: [
+        { key: "name", label: "Event Name" },
+        { key: "description", label: "Event Description" },
+        { key: "date", label: "Date" },
+        { key: "link", label: "Event Link" },
+      ],
+      data: [],
+      links: "/dashboard/events/events-form",
+    },
+  };
+
   return (
     <ShayariData.Provider
       value={{
@@ -176,6 +216,7 @@ export const ShayariProvider = ({ children }) => {
         loadMoreForKeyword,
         getNextChunkByKeyword,
         visibleData,
+        formData,
       }}
     >
       {children}

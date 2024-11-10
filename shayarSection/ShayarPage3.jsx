@@ -38,7 +38,7 @@ export default function ShayariPage3(props) {
             key={element.id}
             id={index + 1}
             shayariname={element.shayariname}
-            sharelink={element.sharelink}
+            // sharelink={element.sharelink}
             shayari={element.shayari}
             slug={props.heading}
           />

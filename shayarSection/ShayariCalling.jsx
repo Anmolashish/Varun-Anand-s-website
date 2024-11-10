@@ -23,7 +23,7 @@ export default function ShayariCalling(props) {
             justifyContent: "center",
           }}
         >
-          <a href={props.sharelink} target="_blank" rel="noopener noreferrer">
+          <a href="#" target="_blank" rel="noopener noreferrer">
             <div className="button-container">
               <button type="button" className="share-button">
                 <span className="button__text">Share</span>

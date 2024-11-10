@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -27,13 +28,12 @@ export default function Navbar() {
     <>
       <div className="navbar">
         <section className="logo">
-          <img
+          <Image
             width="82"
             height="82"
-            src="Images/logo1.png"
+            src="/Images/logo1.png"
             alt="Varun Anand"
             className="navbar-logo-image"
-            loading="lazy"
           />
         </section>
         <section className="tabs">
@@ -52,8 +52,12 @@ export default function Navbar() {
               SHAYARI
             </Link>
           </div>
-          <div>BOOKING</div>
-         
+          <div>
+            <Link className="nav-tabs" href="/booking">
+              BOOKING
+            </Link>
+          </div>
+
           <div>
             <Link className="nav-tabs" href="/gallery">
               GALLERY
@@ -76,17 +80,43 @@ export default function Navbar() {
       </div>
       <div className="navbar-options hide">
         <div className="navbar options">
-          <div className="navbar-option">Home</div>
-          <div className="navbar-option">About</div>
-          <div className="navbar-option">Writtings</div>
-          <div className="navbar-option">Contact</div>
+          <div className="navbar-option">
+            <Link className="nav-tabs" href="/">
+              HOME
+            </Link>
+          </div>
+          <div className="navbar-option">
+            <Link className="nav-tabs" href="/about">
+              ABOUT
+            </Link>
+          </div>
+          <div className="navbar-option">
+            <Link className="nav-tabs" href="/dashboard/shayari">
+              SHAYARI
+            </Link>
+          </div>
+          <div className="navbar-option">
+            <Link className="nav-tabs" href="/booking">
+              BOOKING
+            </Link>
+          </div>
+          <div className="navbar-option">
+            <Link className="nav-tabs" href="/gallery">
+              GALLARY
+            </Link>
+          </div>
+          <div className="navbar-option" onClick={openPopup}>
+            CONTACT
+          </div>
         </div>
       </div>
 
       {isPopupOpen && (
         <div className="popupOverlay">
           <div className="popupForm">
-            <button className="closeBtn" onClick={closePopup}>×</button>
+            <button className="closeBtn" onClick={closePopup}>
+              ×
+            </button>
             <h2>Contact Us</h2>
             <form>
               <label htmlFor="name">Full Name:</label>
@@ -96,7 +126,12 @@ export default function Navbar() {
               <input type="email" id="email" name="email" required />
 
               <label htmlFor="message">Message:</label>
-              <textarea id="message" name="message" rows="4" required></textarea>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                required
+              ></textarea>
 
               <button type="submit">Send Message</button>
             </form>
@@ -160,7 +195,7 @@ export default function Navbar() {
           outline: none;
         }
 
-        .popupForm button[type='submit'] {
+        .popupForm button[type="submit"] {
           width: 100%;
           padding: 10px;
           background-color: #8e3e39; /* Brown button color */
@@ -173,7 +208,7 @@ export default function Navbar() {
           transition: background-color 0.3s;
         }
 
-        .popupForm button[type='submit']:hover {
+        .popupForm button[type="submit"]:hover {
           background-color: #a04f1a; /* Darker shade of brown */
         }
 

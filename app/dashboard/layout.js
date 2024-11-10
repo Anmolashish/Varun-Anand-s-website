@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function layout({ children }) {
   return (
@@ -9,9 +10,18 @@ export default function layout({ children }) {
           <div className="dashboard-options">
             <div className="dashboard-options-heading">Options: </div>
             <div className="dashboard-options-content">
-              <div className="dashboard-option">Option 1</div>
-              <div className="dashboard-option">Option 2</div>
-              <div className="dashboard-option">Option 3</div>
+              <Link className="nav-tabs" href={"/dashboard/contact"}>
+                <div className="dashboard-option">Contact</div>
+              </Link>
+              <Link className="nav-tabs" href={"/dashboard/shayari"}>
+                <div className="dashboard-option">Shayari</div>
+              </Link>
+              <Link className="nav-tabs" href={"/dashboard/events"}>
+                <div className="dashboard-option">Events</div>
+              </Link>
+              <Link className="nav-tabs" href={"/dashboard/booking"}>
+                <div className="dashboard-option">Booking</div>
+              </Link>
             </div>
           </div>
           <div className="dashboard-data">{children}</div>

@@ -17,7 +17,7 @@ export default function NewsLetter() {
         </div>
         <div className="notice">
           <input type="checkbox" />
-          <span className="notice__copy">
+          <span className="notice__copy ">
             I agree to my email address being stored and uses to recieve monthly
             newsletter.
           </span>
