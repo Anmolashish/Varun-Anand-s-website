@@ -9,16 +9,16 @@ export default function ShayarPage2() {
 
   return (
     <div className="shayari-page">
+      <h1 className="shayari-heading">Explore Beautiful Shayari Collections</h1>
       <div className="design-head">
         <Image
-          src="/Images/design.png"
+          src="/Images/border-top-image1.png"
           alt="DESIGN"
           className="design-style"
           width={800}
           height={600}
         />
       </div>
-      <h1 className="shayari-heading">Explore Beautiful Shayari Collections</h1>
 
       <div className="shayari-grid">
         {data.map((element) => {
@@ -31,13 +31,22 @@ export default function ShayarPage2() {
               <div className="shayari-cover">
                 <Image
                   src={`/Images/${element.imgsrc}`}
-                  alt="Mohabbat Shayari"
+                  alt="Image-Shayari"
                   className="cover-image"
                   width={300}
                   height={200}
                 />
 
                 <h2 className="shayari-title">{element.heading}</h2>
+                <div className="design-head">
+                  <Image
+                    src="/Images/border-top-image1.png"
+                    alt="DESIGN"
+                    className="design-style"
+                    width={800}
+                    height={600}
+                  />
+                </div>
               </div>
             </Link>
           );

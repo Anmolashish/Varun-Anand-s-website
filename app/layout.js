@@ -1,9 +1,12 @@
+"use client";
 import "../styles/globals.css";
 import Head from "next/head";
 import { Gowun_Batang } from "next/font/google";
 import Navbar from "components/Navbar";
+import { usePathname } from "next/navigation";
 import NewsLetter from "components/NewsLetter";
 import HomeFooter from "components/HomeFooter";
+import { ShayariProvider } from "context/ShayariContext";
 
 // Load the Gowun Batang font
 const gowunBatang = Gowun_Batang({
@@ -13,16 +16,28 @@ const gowunBatang = Gowun_Batang({
 });
 
 export default function RootLayout({ children }) {
+  const pathname = usePathname();
+
+  const hiddenPaths = [
+    "/dashboard",
+    "/dashboard/contact",
+    "/dashboard/booking",
+    "/dashboard/events",
+    "/dashboard/shayari",
+  ];
+  const shouldHideComponents = hiddenPaths.includes(pathname);
+
   return (
     <html lang="en">
       <Head>
         <title>Varun Anand - Portfolio</title>
       </Head>
-      <body className={`${gowunBatang.variable} `}>
-        <Navbar />
-        {children}
-        <NewsLetter />
-        <HomeFooter />
+      <body className={`${gowunBatang.variable}`}>
+        {/* Conditionally render Navbar, NewsLetter, and HomeFooter */}
+        {!shouldHideComponents && <Navbar />}
+        <ShayariProvider>{children}</ShayariProvider>
+        {!shouldHideComponents && <NewsLetter />}
+        {!shouldHideComponents && <HomeFooter />}
       </body>
     </html>
   );

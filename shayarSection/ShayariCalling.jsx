@@ -11,10 +11,8 @@ export default function ShayariCalling(props) {
       <div className="shayari-container">
         <div style={{ alignItems: "center" }}>
           <span className="shayari-number">{props.id}</span>
-          <div>
-            <span className="shayari-text">{props.shayariname}</span>
-            <p className="shayari-author">- Varun Anand</p>
-          </div>
+          <span className="shayari-text">{props.shayariname}</span>
+          <p className="shayari-author">- Varun Anand</p>
         </div>
         <div
           style={{
@@ -24,7 +22,7 @@ export default function ShayariCalling(props) {
             gap: "15px",
           }}
         >
-          <a href={props.sharelink} target="_blank" rel="noopener noreferrer">
+          <a href="#" target="_blank" rel="noopener noreferrer">
             <div className="button-container">
               <button type="button" className="share-button">
                 <span className="button__text">Share</span>
@@ -90,7 +88,7 @@ export default function ShayariCalling(props) {
           </Link>
         </div>
         <img
-          src="/Images/shayariLayout.png"
+          src="/Images/border-top-image1.png"
           alt="DESIGN"
           className="design-style1"
         />

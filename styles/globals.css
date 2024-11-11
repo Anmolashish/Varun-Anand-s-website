@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Tiro+Devanagari:wght@400;600&display=swap");
+
+/* @import '~@fortawesome/fontawesome-free/css/all.min.css'; */
 
 * {
   margin: 0;
@@ -51,7 +54,7 @@
 }
 
 .about-description {
-  font-size: 20px;
+  font-size: clamp(15px, 3vw, 20px);
   width: 80%;
 }
 
@@ -70,6 +73,10 @@
 
   .image-about-section {
     width: 100%;
+  }
+
+  .about-description {
+    text-align: justify;
   }
 }
 
@@ -190,7 +197,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 1.2rem;
   height: 40%;
 
   /* Makes the content appear above the video */
@@ -207,9 +215,14 @@
 }
 
 .underline-text {
-  font-size: 1.2rem;
-  margin: 0px 20px;
+  font-size: clamp(12px, 3vw, 1.2rem);
+  margin: 0px 30px;
   color: white;
+}
+
+.white {
+  color: white;
+  text-decoration: none;
 }
 
 .button-text {
@@ -217,8 +230,8 @@
   width: 30%;
   /* max-height: 60px; */
   aspect-ratio: 4/1;
-  font-size: clamp(20px, 3vw, 1.5rem);
-  padding: 10px;
+  font-size: clamp(12px, 3vw, 1.5rem);
+  padding: 12px;
   display: flex;
   align-items: center;
   border: 1px solid white;
@@ -239,10 +252,8 @@
   overflow: hidden;
   user-select: none;
   padding-block: 18px;
-
   background-color: #af4c4ca3;
-
-  --gap: 3rem;
+  --gap: 2rem;
   display: flex;
   gap: var(--gap);
 }
@@ -281,7 +292,7 @@
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   white-space: nowrap;
-  color: #000000;
+  color: #522323a3;
 }
 
 .images {
@@ -334,13 +345,13 @@
 }
 
 .home-page5-container {
-  background-color: #fff9ef;
+  background-color: wheat;
   height: fit-content;
   padding-bottom: 30px;
 }
 
 .page5-heading {
-  font-size: 4rem;
+  font-size: clamp(3rem, 13vw, 4rem);
   font-weight: bolder;
   font-family: var(--font-geist-sans);
   text-align: center;
@@ -374,13 +385,21 @@
 }
 
 .poem-heading {
-  font-size: clamp(1.5rem, 3.5vw, 200px);
+  font-size: clamp(1.2rem, 3.5vw, 200px);
   font-weight: bold;
   overflow: hidden;
   white-space: nowrap; /* Prevents text from wrapping onto the next line */
   overflow: hidden; /* Ensures overflowing text is hidden */
   text-overflow: ellipsis; /* Adds '...' at the point where the text overflows */
   width: 80%; /* Make the heading fill the width of its container */
+}
+
+.description {
+  font-size: clamp(12px, 2.5vw, 15px);
+  white-space: nowrap; /* Prevents text from wrapping onto the next line */
+  overflow: hidden; /* Ensures overflowing text is hidden */
+  text-overflow: ellipsis; /* Adds '...' at the point where the text overflows */
+  width: 80%;
 }
 
 .see-more {
@@ -497,6 +516,7 @@
   justify-content: center;
   background: white;
   width: 80%;
+  padding: 20px;
   max-width: 945px;
   height: 474px;
   border-radius: 10px;
@@ -557,7 +577,8 @@
 }
 
 .notice {
-  width: 345px;
+  width: 80%;
+  font-size: clamp(14px, 3.5vw, 20px);
 }
 
 .notice > input[type="checkbox"] {
@@ -573,8 +594,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px 0;
-  background-color: #f8f9fa;
+  padding: 40px 0;
+  background-color: #fff9ef;
   text-align: center;
 }
 
@@ -582,7 +603,7 @@
   display: flex;
   justify-content: center;
   gap: 30px;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 .counter-item {
@@ -599,13 +620,13 @@
 }
 
 .counter {
-  font-size: 48px;
+  font-size: clamp(35px, 4vw, 48px);
   font-weight: bold;
   color: #f54b81;
 }
 
 .counter + p {
-  font-size: 18px;
+  font-size: clamp(14px, 3vw, 18px);
   color: #777;
 }
 
@@ -648,7 +669,7 @@
 }
 
 .contact-us p {
-  font-size: 18px;
+  font-size: medium;
   font-weight: 200;
   margin-bottom: 20px;
   color: #ffffff;
@@ -658,18 +679,6 @@
   display: flex;
   justify-content: center;
   gap: 20px;
-}
-
-.social-icons a {
-  display: inline-block;
-  font-size: 30px;
-  color: #ffffff;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.social-icons a:hover {
-  color: #007bff;
-  transform: scale(1.2);
 }
 
 /* footer section start */
@@ -823,7 +832,7 @@ html {
 /* Aniket style part */
 #pat-heading {
   text-decoration: double;
-  font-size: 28px;
+  font-size: clamp(1.2rem, 3.5vw, 28px);
   text-align: center;
   margin-bottom: 4%;
   margin-top: 3%;
@@ -1417,6 +1426,7 @@ video {
 .description-container p {
   font-size: 1.2rem;
   line-height: 1.6;
+  font-family: Arial, Helvetica, sans-serif;
   max-width: 400px;
   margin-bottom: 20px;
 }
@@ -1495,6 +1505,7 @@ video {
   }
 
   .section-heading {
+    width: 95%;
     font-size: 2rem;
     margin-top: 60px;
     margin-bottom: 60px;
@@ -1507,7 +1518,7 @@ video {
 
   .youtube-link {
     aspect-ratio: 4/2;
-    width: 70%;
+    width: 90%;
   }
 
   .video-container iframe {
@@ -1525,7 +1536,9 @@ video {
   } */
 
   .description-container p {
-    font-size: 1.1rem;
+    font-size: medium;
+    font-weight: 600;
+    text-align: justify;
   }
 
   .watch-video-button {
@@ -1584,8 +1597,14 @@ video {
     flex-direction: column;
   }
 
+  .form__email {
+    padding: 10px 15px;
+    font-size: medium;
+  }
+
   .form__button {
-    width: 200px;
+    width: 100px;
+    height: fit-content;
   }
 
   .about-shayar-content {
@@ -1681,35 +1700,36 @@ video {
   margin-bottom: 10px;
 }
 .design-style {
-  width: 100%;
+  width: 70%;
   height: 100%;
   object-fit: cover;
 }
 .shayari-page {
   text-align: center;
   padding: 50px;
+  background-color: wheat;
 }
 
 .shayari-heading {
   font-size: 2.5rem;
-  color: #b71c1c;
-  margin-bottom: 50px;
-  font-family: "Great Vibes", cursive;
-  text-shadow: 2px 2px #d4a373;
+  color: hsla(0, 39%, 49%, 0.7);
+  margin: 50px 0px;
+  text-shadow: 2px 2px 20px #8b000070;
 }
 
 .shayari-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 50px;
   padding: 0 50px;
   margin-top: 20px;
 }
 
 .shayari-cover {
-  background-color: #fff4e0;
+  background-color: #fff3dc;
   border-radius: 15px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #a85002;
   padding: 20px;
   transition: transform 0.3s ease;
   cursor: pointer;
@@ -1729,7 +1749,7 @@ video {
 .shayari-title {
   font-size: 1.5rem;
   margin-top: 15px;
-  color: #7b1fa2;
+  color: #7b4a2c;
   font-weight: bold;
 }
 
@@ -1753,7 +1773,7 @@ video {
 }
 
 .page-heading {
-  font-size: 7rem;
+  font-size: clamp(4rem, 13vw, 7rem);
   font-weight: bold;
   font-family: var(--font-geist-sans);
 }
@@ -1970,12 +1990,18 @@ blockquote cite {
   background-size: 55px 55px;
   background-color: rgb(161, 77, 46);
 } */
-.layout-shayari {
-  width: 600px;
-  margin: 0 auto;
-  padding: 20px;
+.shayari-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5deb3;
 }
-
+.layout-shayari {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 .shayari-container {
   width: 100%;
   max-width: 1000px;
@@ -1990,7 +2016,7 @@ blockquote cite {
 }
 
 .shayari-text {
-  margin: 0;
+  margin-left: 20px;
   font-size: 2em;
 }
 
@@ -2013,6 +2039,7 @@ blockquote cite {
   font-size: 0.9em;
   color: gray;
   margin: 5px 0;
+  margin-left: 20px;
 }
 
 .button-container {
@@ -2027,11 +2054,14 @@ blockquote cite {
 .design-style1 {
   width: 700px;
   align-items: center;
-  margin-right: 100px;
   border-color: rgb(0, 0, 0);
 }
-/*share button*/
-/* From Uiverse.io by vinodjangid07 */
+
+@media (max-width: 786px) {
+  .design-style {
+    width: 100%;
+  }
+}
 .share-button {
   display: flex;
   align-items: center;
@@ -2106,7 +2136,7 @@ blockquote cite {
   width: 80%;
   max-width: 900px;
   margin: auto;
-  background-color: #f0f3f5;
+  background-color: #f5f3f0;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   overflow: hidden;
@@ -2115,13 +2145,22 @@ blockquote cite {
 .formImage {
   position: relative;
   width: 40%;
-  background-color: #3a3e47;
+  background-color: #47403a;
+}
+
+.form-backbround {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: wheat;
 }
 
 .formContent {
   width: 60%;
   padding: 20px 30px;
-  background-color: #dfe3e8;
+  background-color: #e8e3df;
 }
 
 h2 {
@@ -2174,7 +2213,7 @@ textarea {
 .submitBtn {
   width: 100%;
   padding: 10px;
-  background-color: #23395d;
+  background-color: #af4c4c;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -2185,7 +2224,7 @@ textarea {
 }
 
 .submitBtn:hover {
-  background-color: #1e2d46;
+  background-color: #900c3f;
 }
 
 @media (max-width: 768px) {
@@ -2230,6 +2269,7 @@ textarea {
   height: 300px;
   max-height: 300px;
   border-radius: 15px; /* Rounded corners for the thumbnail */
+  margin: 20px;
 }
 
 .gallery__image {
@@ -2270,17 +2310,20 @@ textarea {
 
 .intro-gallery {
   position: relative; /* Positioning for the pseudo-element */
-  padding: 200px; /* Increased padding for a larger area */
+  /* padding: 200px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white; /* Text color for contrast */
   text-align: center; /* Centering the text */
   border-radius: 0; /* No rounded corners for full width */
   margin-bottom: 20px; /* Space below the intro section */
   overflow: hidden; /* Prevent overflow */
-  width: 100vw; /* Full width of the viewport */
-  left: 50%; /* Positioning for centering */
-  right: 50%; /* Positioning for centering */
-  transform: translateX(-50%); /* Centering the div */
-  height: 600px;
+  width: 100%; /* Full width of the viewport */
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  height: 50vh;
 }
 
 .intro-gallery:before {
@@ -2290,9 +2333,11 @@ textarea {
   left: 0; /* Align to the left */
   right: 0; /* Align to the right */
   bottom: 0; /* Align to the bottom */
-  background-image: url("/Images/scroll-image1.jpg"); /* Background image */
+  background-image: url("/Images/scroll-image4.jpg"); /* Background image */
   background-size: cover; /* Cover the entire area */
   background-position: center; /* Center the image */
+  background-attachment: fixed; /* Keep the background fixed */
+
   filter: blur(5px); /* Blur the image */
   z-index: 1; /* Behind the text */
 }
@@ -2304,7 +2349,7 @@ textarea {
 }
 
 .intro-gallery h1 {
-  font-size: 3rem; /* Larger font size for the title */
+  font-size: clamp(4rem, 13vw, 7rem);
   margin-bottom: 15px; /* Space below the title */
 }
 
@@ -2336,7 +2381,7 @@ textarea {
   }
 
   .gallery__image {
-    filter: grayscale(1); /* Keep images in grayscale initially */
+    filter: grayscale(0); /* Keep images in grayscale initially */
   }
 }
 
@@ -2347,19 +2392,171 @@ textarea {
   align-items: center;
   flex-direction: column;
 }
-.shayari-structure {
+
+/* Dashboard CSS */
+
+.dashboard {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  background-color: wheat;
+}
+
+.main-dashboard {
+  display: flex;
+  width: 85%;
+  height: 85vh;
+  border-radius: 20px;
   gap: 10px;
+  padding: 10px;
+  justify-content: space-between;
+  border: 1px solid saddlebrown;
+  background-color: white;
 }
-.left-line {
-  width: 5px;
-  height: 200px;
-  background-color: #000;
+
+.dashboard-options {
+  width: 25%;
+  border: 1px solid #2f2f2f;
+  border-radius: 15px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
-.right-line {
-  width: 5px;
-  height: 200px;
-  background-color: #000;
+
+.dashboard-data {
+  width: 75%;
+  border: 1px solid #2f2f2f;
+  border-radius: 15px;
+}
+
+.dashboard-options-heading {
+  font-size: clamp(20px, 3vw, 30px);
+  text-align: center;
+  padding: 5px;
+}
+
+.dashboard-options-content {
+  margin-top: 10px;
+}
+
+.dashboard-option {
+  font-size: 20px;
+  width: 100%;
+  padding: 5px;
+  border-bottom: 1px solid #2f2f2f;
+  border-radius: 5px;
+}
+
+.dashboard-container-heading {
+  text-align: start;
+}
+
+.form-button {
+  width: fit-content;
+  padding: 5px 25px;
+  background-color: #af4c4c;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard-content-header {
+  display: flex;
+  padding: 15px 30px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid saddlebrown;
+}
+
+.dashboard-table-container {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.dashboard-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+}
+
+.dashboard-table-header {
+  background-color: #4a90e2;
+  color: #ffffff;
+}
+
+.table-header-cell {
+  padding: 15px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.dashboard-table-body .table-row:hover {
+  background-color: #f1f1f1;
+}
+
+.table-row .table-cell {
+  padding: 12px;
+  border-top: 1px solid #ddd;
+}
+
+/* Make sure the header and data rows align */
+.table-cell,
+.table-header-cell {
+  width: auto; /* Columns will share available width */
+  max-width: 8rem;
+  white-space: nowrap; /* Prevents text from wrapping onto the next line */
+  overflow: hidden; /* Ensures overflowing text is hidden */
+  text-overflow: ellipsis;
+}
+
+.table-header-cell:first-child,
+.table-cell:first-child {
+  width: 50px; /* Fixed width for the S.no column */
+  text-align: center;
+}
+
+.form-background {
+  background-color: #f7e7bb;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .dashboard-options {
+    display: none;
+  }
+
+  .dashboard-data {
+    width: 100%;
+  }
+}
+.shayari-containers {
+  position: relative;
+}
+.shayari-data {
+  position: relative;
+  color: #895b56;
+  text-align: center;
+  padding: 20px;
+}
+
+.shayari-heading {
+  font-size: 2.5rem;
+  margin-bottom: 80px;
+}
+
+.shayari-heading,
+h3 {
+  color: hsla(0, 39%, 49%, 0.7);
+}
+.shayari-texts {
+  white-space: pre-line;
 }

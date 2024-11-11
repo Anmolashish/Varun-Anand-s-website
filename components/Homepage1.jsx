@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Homepage1() {
   return (
@@ -25,7 +26,12 @@ export default function Homepage1() {
           <div className="underline-text">
             Dive into the world of words, rhythm, and soul-stirring poetry!
           </div>
-          <div className="button-text">Explore More</div>
+
+          <div className="button-text">
+            <Link className="white" href={"/about"}>
+              Explore More
+            </Link>
+          </div>
         </div>
       </div>
     </div>

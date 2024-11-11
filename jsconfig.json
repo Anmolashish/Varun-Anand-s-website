@@ -5,7 +5,8 @@
       "@/*": ["./*"],
       "components/*": ["components/*"],
       "aboutComponents/*": ["aboutComponents/*"],
-      "context/*": ["context/*"]
+      "context/*": ["context/*"],
+      "dashboardCompontents/*": ["dashboardCompontents/*"]
     }
   }
 }
