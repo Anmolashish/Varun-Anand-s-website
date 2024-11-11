@@ -1977,6 +1977,8 @@ blockquote cite {
 }
 
 .shayari-container {
+  width: 100%;
+  max-width: 1000px;
   margin-top: 100px;
   margin-bottom: 20px;
 }
@@ -2016,7 +2018,6 @@ blockquote cite {
 .button-container {
   display: flex;
   gap: 10px;
-  margin-top: 10px;
 }
 
 .button {
@@ -2027,7 +2028,7 @@ blockquote cite {
   width: 700px;
   align-items: center;
   margin-right: 100px;
-  border: 1px solid #000;
+  border-color: rgb(0, 0, 0);
 }
 /*share button*/
 /* From Uiverse.io by vinodjangid07 */
@@ -2345,4 +2346,20 @@ textarea {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+.shayari-structure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.left-line {
+  width: 5px;
+  height: 200px;
+  background-color: #000;
+}
+.right-line {
+  width: 5px;
+  height: 200px;
+  background-color: #000;
 }

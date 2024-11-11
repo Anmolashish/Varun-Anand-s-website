@@ -46,9 +46,10 @@ export const ShayariProvider = ({ children }) => {
   const shayaris = [
     {
       id: 1,
-      shayariname: "Sad shayari , Mohabbat shayari, Break-up shayari",
+      shayariname: "झीलें क्या हैं? उसकी आँखें ",
       keywords: ["mohabbat", "sad", "break-up"],
-      shayari: " HELLO THERE",
+      shayari:
+        "झीलें क्या हैं? उसकी आँखें उम्दा क्या है? उसका चेहरा ख़ुश्बू क्या है? उसकी साँसें खुशियाँ क्या हैं? उसका  होना तो ग़म क्या है? उससे जुदाई सावन क्या है? उसका रोना सर्दी क्या है? उसकी उदासी ",
       urdushayari: "",
       sharelink: "",
     },

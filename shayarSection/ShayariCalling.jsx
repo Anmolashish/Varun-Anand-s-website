@@ -9,7 +9,7 @@ export default function ShayariCalling(props) {
   return (
     <>
       <div className="shayari-container">
-        <div style={{ display: "flex", alignItems: "center" }}>
+        <div style={{ alignItems: "center" }}>
           <span className="shayari-number">{props.id}</span>
           <div>
             <span className="shayari-text">{props.shayariname}</span>
@@ -21,6 +21,7 @@ export default function ShayariCalling(props) {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            gap: "15px",
           }}
         >
           <a href={props.sharelink} target="_blank" rel="noopener noreferrer">
