@@ -1226,8 +1226,25 @@ video {
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+.image-top {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin-top: 100px;
+}
+@media (max-width: 768px) {
+  .image-top {
+    max-width: 300px;
+  }
 }
 
+@media (max-width: 480px) {
+  .image-top {
+    max-width: 200px;
+  }
+}
 .about-shayar-title {
   font-size: 2rem;
   font-weight: bold;
@@ -2005,19 +2022,19 @@ blockquote cite {
 .shayari-container {
   width: 100%;
   max-width: 1000px;
-  margin-top: 100px;
-  margin-bottom: 20px;
+  margin: 50px auto 20px;
+  padding: 10px;
 }
 
 .shayari-number {
   font-weight: bold;
   margin-right: 10px;
-  font-size: 2em;
+  font-size: clamp(1.5rem, 5vw, 2em);
 }
 
 .shayari-text {
   margin-left: 20px;
-  font-size: 2em;
+  font-size: clamp(1rem, 6vw, 2rem);
 }
 
 .shayari-text::before,
@@ -2025,18 +2042,15 @@ blockquote cite {
   content: "“ ";
   font-family: Georgia;
   font-size: 2.5rem;
-  /* margin: -2rem 0 0 -4rem; */
-  /* position: absolute; */
   opacity: 0.5;
 }
 
 .shayari-text::after {
   content: " ”";
-  /* margin: -1rem -4rem 0 0; */
 }
 
 .shayari-author {
-  font-size: 0.9em;
+  font-size: clamp(0.8rem, 3vw, 0.9em);
   color: gray;
   margin: 5px 0;
   margin-left: 20px;
@@ -2045,29 +2059,23 @@ blockquote cite {
 .button-container {
   display: flex;
   gap: 10px;
-}
-
-.button {
-  padding: 5px 10px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .design-style1 {
-  width: 700px;
+  width: 100%;
+  max-width: 700px;
+  margin-top: 20px;
   align-items: center;
-  border-color: rgb(0, 0, 0);
-}
-
-@media (max-width: 786px) {
-  .design-style {
-    width: 100%;
-  }
+  object-fit: cover;
 }
 .share-button {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 110px;
-  height: 50px;
+  width: 99px;
+  height: 42px;
   position: relative;
   border: 1px solid #81aca0;
   border-radius: 30px;
@@ -2101,32 +2109,60 @@ blockquote cite {
 .share-button:hover .button__icon {
   width: 100%;
 }
-/*Copy button*/
+
+/* Copy Button */
 .button2 {
   display: inline-block;
   outline: none;
   cursor: pointer;
   border: 1px solid #af4c4c;
-  text-align: left;
-  vertical-align: top;
-  padding: calc(0.875rem - 3px) 63px calc(0.875rem - 3px) 15px;
-  background-color: #00000000;
+  padding: 10px 20px;
+  background-color: transparent;
   font-size: 13px;
-  letter-spacing: 0.16px;
-  min-height: 48px;
-  line-height: 1.29;
   color: #af4c4c;
-  font-weight: 70;
+  font-weight: 700;
   border-radius: 30px;
-  transition: background 70ms cubic-bezier(0, 0, 0.38, 0.9),
-    box-shadow 70ms cubic-bezier(0, 0, 0.38, 0.9),
-    border-color 70ms cubic-bezier(0, 0, 0.38, 0.9),
-    outline 70ms cubic-bezier(0, 0, 0.38, 0.9);
+  transition: background 0.3s, color 0.3s;
 }
+
 .button2:hover {
   background-color: #af4c4c;
   color: #fff;
 }
+
+/* Responsive Adjustments for Smaller Screens */
+@media (max-width: 786px) {
+  .shayari-container {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .shayari-number {
+    font-size: 1.5rem;
+  }
+
+  .shayari-text {
+    margin-left: 0;
+    font-size: 1.2rem;
+  }
+
+  .shayari-author {
+    font-size: 0.8rem;
+    margin-left: 0;
+  }
+
+  .button-container {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .design-style1 {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
 .quote {
   width: 0.5em;
   height: 0.5em;
@@ -2556,7 +2592,9 @@ textarea {
 .shayari-heading,
 h3 {
   color: hsla(0, 39%, 49%, 0.7);
+  font-size: clamp(1rem, 6vw, 2rem);
 }
 .shayari-texts {
+  font-size: 1.2rem;
   white-space: pre-line;
 }

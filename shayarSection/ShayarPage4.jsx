@@ -36,7 +36,7 @@ export default function ShayariDetailPage(props) {
   };
 
   return (
-    <div style={{ background: "#f7e7bb" }}>
+    <div style={{ background: "#f7e7bb", height: "auto" }}>
       <div className="shayari-containers">
         <div className="shayari-data">
           <h1 className="shayari-heading">{selectedShayari.shayariname}</h1>

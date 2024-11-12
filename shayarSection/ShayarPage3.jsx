@@ -22,16 +22,14 @@ export default function ShayariPage3(props) {
   return (
     <div className="shayari-background">
       <div className="layout-shayari">
-        <img
-          src={basicData[props.heading].imageSrc}
-          alt="Varun Anand"
-          className="about-shayar-image"
-          loading="lazy"
-          style={{
-            alignItems: "center",
-            marginTop: "70px",
-          }}
-        />
+        <div className="image-top">
+          <img
+            src={basicData[props.heading].imageSrc}
+            alt="Varun Anand"
+            className="about-shayar-image"
+            loading="lazy"
+          />
+        </div>
         <div style={{ marginTop: "200px" }}>
           <h1 style={{ textAlign: "center", color: "#b71c1c" }}>
             {basicData[props.heading].heading}
