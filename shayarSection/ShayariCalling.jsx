@@ -9,18 +9,17 @@ export default function ShayariCalling(props) {
   return (
     <div className="per-shayari-container">
       <div className="shayari-container">
-        <div style={{ display: "flex", alignItems: "center" }}>
+        <div style={{ alignItems: "center" }}>
           <span className="shayari-number">{props.id}</span>
-          <div>
-            <span className="shayari-text">{props.shayariname}</span>
-            <p className="shayari-author">- Varun Anand</p>
-          </div>
+          <span className="shayari-text">{props.shayariname}</span>
+          <p className="shayari-author">- Varun Anand</p>
         </div>
         <div
           style={{
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            gap: "15px",
           }}
         >
           <div className="button-container">
@@ -88,7 +87,7 @@ export default function ShayariCalling(props) {
           </Link>
         </div>
         <img
-          src="/Images/shayariLayout.png"
+          src="/Images/border-top-image1.png"
           alt="DESIGN"
           className="design-style1"
         />

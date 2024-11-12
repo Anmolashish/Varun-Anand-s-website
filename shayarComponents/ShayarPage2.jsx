@@ -31,7 +31,7 @@ export default function ShayarPage2() {
               <div className="shayari-cover">
                 <Image
                   src={`/Images/${element.imgsrc}`}
-                  alt="Mohabbat Shayari"
+                  alt="Image-Shayari"
                   className="cover-image"
                   width={300}
                   height={200}

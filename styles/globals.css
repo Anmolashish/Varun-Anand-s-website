@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Tiro+Devanagari:wght@400;600&display=swap");
+
 /* @import '~@fortawesome/fontawesome-free/css/all.min.css'; */
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 * {
@@ -2093,13 +2095,21 @@ blockquote cite {
   background-size: 55px 55px;
   background-color: rgb(161, 77, 46);
 } */
-.layout-shayari {
-  width: 600px;
-  margin: 0 auto;
-  padding: 20px;
+.shayari-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5deb3;
 }
-
+.layout-shayari {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 .shayari-container {
+  width: 100%;
+  max-width: 1000px;
   margin-top: 100px;
   margin-bottom: 20px;
 }
@@ -2111,7 +2121,7 @@ blockquote cite {
 }
 
 .shayari-text {
-  margin: 0;
+  margin-left: 20px;
   font-size: 2em;
 }
 
@@ -2134,12 +2144,12 @@ blockquote cite {
   font-size: 0.9em;
   color: gray;
   margin: 5px 0;
+  margin-left: 20px;
 }
 
 .button-container {
   display: flex;
   gap: 10px;
-  margin-top: 10px;
 }
 
 .button {
@@ -2149,8 +2159,7 @@ blockquote cite {
 .design-style1 {
   width: 700px;
   align-items: center;
-  margin-right: 100px;
-  border: 1px solid #000;
+  border-color: rgb(0, 0, 0);
 }
 
 @media (max-width: 786px) {
@@ -2158,8 +2167,6 @@ blockquote cite {
     width: 100%;
   }
 }
-/*share button*/
-/* From Uiverse.io by vinodjangid07 */
 .share-button {
   display: flex;
   align-items: center;
@@ -2673,4 +2680,26 @@ textarea {
   .dashboard-data {
     width: 100%;
   }
+}
+.shayari-containers {
+  position: relative;
+}
+.shayari-data {
+  position: relative;
+  color: #895b56;
+  text-align: center;
+  padding: 10px;
+}
+
+.shayari-heading {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.shayari-heading,
+h3 {
+  color: hsla(0, 39%, 49%, 0.7);
+}
+.shayari-texts {
+  white-space: pre-line;
 }
