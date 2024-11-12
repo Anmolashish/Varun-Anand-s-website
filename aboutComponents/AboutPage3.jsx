@@ -4,10 +4,10 @@ export default function AboutPage3() {
       <div className="quote-section">
         <blockquote>
           <p>
-            <strong>If this is coffee,</strong> please bring me some tea;{" "}
-            <strong>but if this is tea,</strong> please bring me some coffee.
+            चाँद, सितारे, फूल, परिंदे ,शाम ,सवेरा एक तरफ़ सारी दुनिया उसका चर्बा
+            उसका चेहरा एक तरफ़
           </p>
-          <cite>Abraham Lincoln</cite>
+          <cite>Varun Anand</cite>
         </blockquote>
       </div>
     </>

@@ -1331,6 +1331,9 @@ video {
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  align-items: center;
+  margin-top: 70px;
 }
 
 .about-shayar-title {
@@ -1723,7 +1726,6 @@ video {
   }
 
   .about-shayar-image {
-    max-width: 100%;
     margin-bottom: 20px;
   }
   .tilt-right,

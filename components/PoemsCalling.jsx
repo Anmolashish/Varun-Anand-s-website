@@ -4,7 +4,13 @@ import { PropTypes } from "prop-types";
 export default function PoemsCalling(props) {
   return (
     <div className="poems">
-      <Link className="nav-tabs" href={"/"}>
+      <Link
+        className="nav-tabs"
+        href={`/shayari/latest/${props.heading
+          .toLowerCase()
+          .replace(/[,\s]+/g, "-")
+          .replace(/[^\w\-]+/g, "")}`}
+      >
         <div className="poem-heading">{props.heading} </div>
         <div className="description">{props.description}</div>
         <div className="read-poem">

@@ -2,6 +2,7 @@
 import { useContext, useEffect, useState } from "react";
 import { ShayariData } from "context/ShayariContext";
 import ShayariCalling from "./ShayariCalling";
+import Image from "next/image";
 
 export default function ShayariPage3(props) {
   const { basicData, getNextChunkByKeyword, loadMoreForKeyword, visibleData } =
@@ -22,15 +23,12 @@ export default function ShayariPage3(props) {
   return (
     <div className="shayari-background">
       <div className="layout-shayari">
-        <img
+        <Image
           src={basicData[props.heading].imageSrc}
           alt="Varun Anand"
           className="about-shayar-image"
-          loading="lazy"
-          style={{
-            alignItems: "center",
-            marginTop: "70px",
-          }}
+          width={500}
+          height={500}
         />
         <div style={{ marginTop: "200px" }}>
           <h1 style={{ textAlign: "center", color: "#b71c1c" }}>

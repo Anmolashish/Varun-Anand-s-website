@@ -9,27 +9,27 @@ export default function Homepage6() {
       id: 1,
       title: "Jashn e rekhta",
       description:
-        "Our beloved shayar has been awarded the prestigious Golden Pen for outstanding contributions to poetry. Celebrate with us!",
-      date: "2023-03-01",
-      link: "",
+        "Our esteemed shayar was honored with an invitation to Jashn-e-Rekhta, the grand celebration of Urdu literature and culture. Join us in celebrating his journey!",
+      date: "2019-12-15",
+      link: "https://www.jashnerekhta.org/",
       image: "/Images/IMG-20241109-WA0009.jpg",
     },
     {
       id: 2,
       title: "Dubai andaz e bayan",
       description:
-        "Our beloved shayar has been awarded the prestigious Golden Pen for outstanding contributions to poetry. Celebrate with us!",
-      date: "2023-03-01",
-      link: "",
+        "Invited to the prestigious Dubai Andaz-e-Bayan, a celebrated event honoring exceptional voices in Urdu literature and poetry.",
+      date: "2023-11-26",
+      link: "https://andaazebayaanaur.com/",
       image: "/Images/IMG-20241109-WA0007.jpg",
     },
     {
       id: 3,
       title: "Jashn e urdu dubai",
       description:
-        "Our beloved shayar has been awarded the prestigious Golden Pen for outstanding contributions to poetry. Celebrate with us!",
-      date: "2023-03-01",
-      link: "",
+        "Invited to Jashn-e-Urdu Dubai, a renowned celebration dedicated to the richness of Urdu language and poetry.",
+      date: "2021-11-19",
+      link: "https://jashneurdu.org/",
       image: "/Images/IMG-20241109-WA0008.jpg",
     },
   ];
@@ -60,9 +60,11 @@ export default function Homepage6() {
               </div>
               <div className="card-footer">
                 <p className="tag">{element.date}</p>
-                <button type="button" className="action">
-                  Join{" "}
-                </button>
+                <a href={element.link}>
+                  <button type="button" className="action">
+                    More{" "}
+                  </button>
+                </a>
               </div>
             </div>
           );
