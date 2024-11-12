@@ -2545,12 +2545,12 @@ textarea {
   position: relative;
   color: #895b56;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
 }
 
 .shayari-heading {
   font-size: 2.5rem;
-  margin-bottom: 80px;
+  margin-bottom: 30px;
 }
 
 .shayari-heading,

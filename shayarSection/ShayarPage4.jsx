@@ -1,5 +1,5 @@
 "use client";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ShayariData } from "context/ShayariContext";
 
 export default function ShayariDetailPage(props) {
@@ -14,14 +14,35 @@ export default function ShayariDetailPage(props) {
     return generatedSlug === slug;
   });
 
-  if (!selectedShayari) return <p>Shayari not found</p>;
+  const [showUrdu, setShowUrdu] = useState(false); // initial state it false for urdu so default in hindi
+
+  if (!selectedShayari)
+    return (
+      <p>
+        Yahin pe khatam hoti hai shayari ki baat, Fir aayenge hum naye alfaaz ke
+        saath.
+      </p>
+    );
+
+  const copyText = () => {
+    navigator.clipboard.writeText(
+      showUrdu ? selectedShayari.urdushayari : selectedShayari.shayari
+    );
+    alert("Shayari copied!");
+  };
+
+  const urduChange = () => {
+    setShowUrdu(!showUrdu); // it change the value each current time
+  };
 
   return (
     <div style={{ background: "#f7e7bb" }}>
       <div className="shayari-containers">
         <div className="shayari-data">
           <h1 className="shayari-heading">{selectedShayari.shayariname}</h1>
-          <p className="shayari-texts">{selectedShayari.shayari}</p>
+          <p className="shayari-texts">
+            {showUrdu ? selectedShayari.urdushayari : selectedShayari.shayari}
+          </p>
           <div
             style={{
               display: "flex",
@@ -84,8 +105,12 @@ export default function ShayariDetailPage(props) {
                 </button>
               </div>
             </a>
-            <button className="button2">Copy</button>
-            <button className="button2">More...</button>
+            <button className="button2" onClick={copyText}>
+              Copy
+            </button>
+            <button className="button2" onClick={urduChange}>
+              {showUrdu ? "Hindi" : "Urdu"}
+            </button>
           </div>
         </div>
       </div>

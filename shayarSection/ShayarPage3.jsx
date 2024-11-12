@@ -30,8 +30,6 @@ export default function ShayariPage3(props) {
           style={{
             alignItems: "center",
             marginTop: "70px",
-            width: "100%",
-            height: "400px",
           }}
         />
         <div style={{ marginTop: "200px" }}>
