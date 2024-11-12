@@ -90,7 +90,29 @@ export const ShayariProvider = ({ children }) => {
       id: 7,
       shayariname: "Mohabbat shayari",
       keywords: ["mohabbat"],
-      shayari: " HELLO THERE ",
+      shayari: `अपनों को बेगाना समझा, ला'नत है
+वाह रे तेरा गोरख धंदा, ला'नत है
+
+
+
+हाकिम को इक चिट्ठी लिक्खो, सब के सब
+और उसमे बस इतना लिखना, ला'नत है
+
+
+
+इस से बढकर उस पर ला'नत क्या होगी
+बोल रहा है बच्चा-बच्चा  ला'नत है
+
+
+
+जिस दीवार प उसके वादे लिक्खे थे
+हमने उसके नीचे लिक्खा, ला'नत है
+
+
+
+मत रक्खो ऐसे माली को गुलशन में
+जिसको हो बस गेंदा  प्यारा,  ला'नत है
+`,
       urdushayari: "",
     },
   ];
@@ -193,17 +215,6 @@ export const ShayariProvider = ({ children }) => {
       ],
       data: [],
       links: "/",
-    },
-    events: {
-      heading: "Events",
-      headers: [
-        { key: "name", label: "Event Name" },
-        { key: "description", label: "Event Description" },
-        { key: "date", label: "Date" },
-        { key: "link", label: "Event Link" },
-      ],
-      data: [],
-      links: "/dashboard/events/events-form",
     },
   };
 

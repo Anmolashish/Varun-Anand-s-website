@@ -11,7 +11,6 @@ export default function Homepage4() {
           <div className="image-div">
             <Image
               className="image"
-              loading="lazy"
               src="/Images/scroll-image1.jpg"
               alt="image"
               width={width}
@@ -21,7 +20,6 @@ export default function Homepage4() {
           <div className="image-div">
             <Image
               className="image"
-              loading="lazy"
               src="/Images/scroll-image2.jpg"
               alt="image"
               width={width}
@@ -31,7 +29,6 @@ export default function Homepage4() {
           <div className="image-div">
             <Image
               className="image"
-              loading="lazy"
               src="/Images/scroll-image3.jpg"
               alt="image"
               width={width}
@@ -41,7 +38,6 @@ export default function Homepage4() {
           <div className="image-div">
             <Image
               className="image"
-              loading="lazy"
               src="/Images/scroll-image4.jpg"
               alt="image"
               width={width}
@@ -53,7 +49,6 @@ export default function Homepage4() {
           <div className="image-div">
             <Image
               className="image"
-              loading="lazy"
               src="/Images/scroll-image5.jpg"
               alt="image"
               width={width}
@@ -63,7 +58,6 @@ export default function Homepage4() {
           <div className="image-div">
             <Image
               className="image"
-              loading="lazy"
               src="/Images/scroll-image6.jpg"
               alt="image"
               width={width}
@@ -73,7 +67,6 @@ export default function Homepage4() {
           <div className="image-div">
             <Image
               className="image"
-              loading="lazy"
               src="/Images/scroll-image7.jpg"
               alt="image"
               width={width}
@@ -83,7 +76,6 @@ export default function Homepage4() {
           <div className="image-div">
             <Image
               className="image"
-              loading="lazy"
               src="/Images/scroll-image8.jpg"
               alt="image"
               width={width}

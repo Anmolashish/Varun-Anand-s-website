@@ -1,5 +1,5 @@
 "use client";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ShayariData } from "context/ShayariContext";
 
 export default function ShayariDetailPage(props) {
@@ -15,7 +15,7 @@ export default function ShayariDetailPage(props) {
   });
 
   if (!selectedShayari) return <p>Shayari not found</p>;
-
+  // const [shayari, setShayari] = useState(selectedShayari.shayari);
   return (
     <div className="shayari-data">
       <h1>{selectedShayari.shayariname}</h1>

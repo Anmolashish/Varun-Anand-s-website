@@ -4,22 +4,14 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 export default function Navbar() {
+  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-  useEffect(() => {
-    const hamburger = document.querySelector(".hamburger");
-    const navbarOptions = document.querySelector(".navbar-options");
+  // Function to toggle the navbar visibility
+  const toggleNavbar = () => setIsNavbarOpen(!isNavbarOpen);
 
-    const handleClick = () => {
-      navbarOptions.classList.toggle("hide");
-    };
-
-    hamburger.addEventListener("click", handleClick);
-
-    return () => {
-      hamburger.removeEventListener("click", handleClick);
-    };
-  }, []);
+  // Function to close the navbar when a tab is selected
+  const closeNavbar = () => setIsNavbarOpen(false);
 
   const openPopup = () => setIsPopupOpen(true);
   const closePopup = () => setIsPopupOpen(false);
@@ -34,32 +26,32 @@ export default function Navbar() {
             src="/Images/logo1.png"
             alt="Varun Anand"
             className="navbar-logo-image"
+            priority
           />
         </section>
         <section className="tabs">
           <div>
-            <Link className="nav-tabs" href="/">
+            <Link className="nav-tabs" href="/" onClick={closeNavbar}>
               HOME
             </Link>
           </div>
           <div>
-            <Link className="nav-tabs" href="/about">
+            <Link className="nav-tabs" href="/about" onClick={closeNavbar}>
               ABOUT
             </Link>
           </div>
           <div>
-            <Link className="nav-tabs" href="/shayari">
+            <Link className="nav-tabs" href="/shayari" onClick={closeNavbar}>
               SHAYARI
             </Link>
           </div>
           <div>
-            <Link className="nav-tabs" href="/booking">
+            <Link className="nav-tabs" href="/booking" onClick={closeNavbar}>
               BOOKING
             </Link>
           </div>
-
           <div>
-            <Link className="nav-tabs" href="/gallery">
+            <Link className="nav-tabs" href="/gallery" onClick={closeNavbar}>
               GALLERY
             </Link>
           </div>
@@ -68,7 +60,7 @@ export default function Navbar() {
           <div className="button" onClick={openPopup}>
             Contact
           </div>
-          <div className="hamburger">
+          <div className="hamburger" onClick={toggleNavbar}>
             <img
               width="30"
               height="30"
@@ -78,38 +70,40 @@ export default function Navbar() {
           </div>
         </section>
       </div>
-      <div className="navbar-options hide">
-        <div className="navbar options">
-          <div className="navbar-option">
-            <Link className="nav-tabs" href="/">
-              HOME
-            </Link>
-          </div>
-          <div className="navbar-option">
-            <Link className="nav-tabs" href="/about">
-              ABOUT
-            </Link>
-          </div>
-          <div className="navbar-option">
-            <Link className="nav-tabs" href="/dashboard/shayari">
-              SHAYARI
-            </Link>
-          </div>
-          <div className="navbar-option">
-            <Link className="nav-tabs" href="/booking">
-              BOOKING
-            </Link>
-          </div>
-          <div className="navbar-option">
-            <Link className="nav-tabs" href="/gallery">
-              GALLARY
-            </Link>
-          </div>
-          <div className="navbar-option" onClick={openPopup}>
-            CONTACT
+      {isNavbarOpen && (
+        <div className="navbar-options">
+          <div className="navbar options">
+            <div className="navbar-option">
+              <Link className="nav-tabs" href="/" onClick={closeNavbar}>
+                HOME
+              </Link>
+            </div>
+            <div className="navbar-option">
+              <Link className="nav-tabs" href="/about" onClick={closeNavbar}>
+                ABOUT
+              </Link>
+            </div>
+            <div className="navbar-option">
+              <Link className="nav-tabs" href="/shayari" onClick={closeNavbar}>
+                SHAYARI
+              </Link>
+            </div>
+            <div className="navbar-option">
+              <Link className="nav-tabs" href="/booking" onClick={closeNavbar}>
+                BOOKING
+              </Link>
+            </div>
+            <div className="navbar-option">
+              <Link className="nav-tabs" href="/gallery" onClick={closeNavbar}>
+                GALLERY
+              </Link>
+            </div>
+            <div className="navbar-option" onClick={openPopup}>
+              CONTACT
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       {isPopupOpen && (
         <div className="popupOverlay">
@@ -138,95 +132,6 @@ export default function Navbar() {
           </div>
         </div>
       )}
-
-      <style jsx>{`
-        .navbar {
-          /* Your existing navbar styles */
-        }
-
-        .popupOverlay {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0.5);
-          backdrop-filter: blur(5px);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          z-index: 1000;
-        }
-
-        .popupForm {
-          background: #f2f2f2; /* Light gray background */
-          padding: 30px;
-          border-radius: 8px;
-          width: 320px;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-          position: relative;
-          text-align: left;
-        }
-
-        .popupForm h2 {
-          margin-top: 0;
-          color: #333;
-        }
-
-        .popupForm label {
-          display: block;
-          margin: 10px 0 5px;
-          color: #333;
-        }
-
-        .popupForm input,
-        .popupForm textarea {
-          width: 100%;
-          padding: 10px;
-          border-radius: 6px;
-          border: 1px solid #ccc;
-          background-color: #fff;
-          font-size: 14px;
-        }
-
-        .popupForm input:focus,
-        .popupForm textarea:focus {
-          border-color: #b5651d; /* Brown border color on focus */
-          outline: none;
-        }
-
-        .popupForm button[type="submit"] {
-          width: 100%;
-          padding: 10px;
-          background-color: #8e3e39; /* Brown button color */
-          color: white;
-          border: none;
-          border-radius: 6px;
-          cursor: pointer;
-          margin-top: 15px;
-          font-size: 16px;
-          transition: background-color 0.3s;
-        }
-
-        .popupForm button[type="submit"]:hover {
-          background-color: #a04f1a; /* Darker shade of brown */
-        }
-
-        .closeBtn {
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          font-size: 20px;
-          cursor: pointer;
-          background: none;
-          border: none;
-          color: #888;
-        }
-
-        .closeBtn:hover {
-          color: #333;
-        }
-      `}</style>
     </>
   );
 }

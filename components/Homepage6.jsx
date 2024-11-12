@@ -7,27 +7,30 @@ export default function Homepage6() {
   const eventData = [
     {
       id: 1,
-      title: "REKHTA",
+      title: "Jashn e rekhta",
       description:
         "Our beloved shayar has been awarded the prestigious Golden Pen for outstanding contributions to poetry. Celebrate with us!",
       date: "2023-03-01",
       link: "",
+      image: "/Images/IMG-20241109-WA0009.jpg",
     },
     {
       id: 2,
-      title: "REKHTA",
+      title: "Dubai andaz e bayan",
       description:
         "Our beloved shayar has been awarded the prestigious Golden Pen for outstanding contributions to poetry. Celebrate with us!",
       date: "2023-03-01",
       link: "",
+      image: "/Images/IMG-20241109-WA0007.jpg",
     },
     {
       id: 3,
-      title: "REKHTA",
+      title: "Jashn e urdu dubai",
       description:
         "Our beloved shayar has been awarded the prestigious Golden Pen for outstanding contributions to poetry. Celebrate with us!",
       date: "2023-03-01",
       link: "",
+      image: "/Images/IMG-20241109-WA0008.jpg",
     },
   ];
 
@@ -42,9 +45,10 @@ export default function Homepage6() {
             <div className="card" key={element.id}>
               <div className="header">
                 <Image
-                  src="/Images/review.jpeg"
+                  src={element.image}
                   id="rev-img"
                   alt="event-image"
+                  className="events-header-images"
                   width={width}
                   height={height}
                 />

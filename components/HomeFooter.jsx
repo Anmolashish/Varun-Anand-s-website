@@ -1,16 +1,18 @@
+import Link from "next/link";
+
 export default function HomeFooter() {
   return (
     <div className="footer-div">
       <footer className="footer">
         <div className="footer__addr">
-          <h1 className="footer__logo">Something</h1>
+          <h1 className="footer__logo">Varun Anand</h1>
 
           <h2>Contact</h2>
 
           <address>
-            5534 Somewhere In. The World 22193-10212
+            Ludhiana, Punjab
             <br />
-            <a className="footer__btn" href="mailto:example@gmail.com">
+            <a className="footer__btn" href="varunanand1234@gmail.com">
               Email Us
             </a>
           </address>
@@ -22,75 +24,73 @@ export default function HomeFooter() {
 
             <ul className="nav__ul">
               <li>
-                <a href="#">Online</a>
+                <Link href="/">Home</Link>
               </li>
 
               <li>
-                <a href="#">Print</a>
+                <Link href="/about">About</Link>
               </li>
 
               <li>
-                <a href="#">Alternative Ads</a>
+                <Link href="/">Contact</Link>
               </li>
             </ul>
           </li>
 
           <li className="nav__item nav__item--extra">
-            <h2 className="nav__title">Technology</h2>
+            <h2 className="nav__title">Shayari</h2>
 
             <ul className="nav__ul nav__ul--extra">
               <li>
-                <a href="#">Hardware Design</a>
+                <Link href="/shayari/latest">Latest</Link>
               </li>
 
               <li>
-                <a href="#">Software Design</a>
+                <Link href="/shayari/signature">Signature</Link>
               </li>
 
               <li>
-                <a href="#">Digital Signage</a>
+                <Link href="/shayari/sad">Sad</Link>
               </li>
 
               <li>
-                <a href="#">Automation</a>
+                <Link href="/shayari/romantic">Romantic</Link>
               </li>
 
               <li>
-                <a href="#">Artificial Intelligence</a>
+                <Link href="/shayari/break-up">Break-up</Link>
               </li>
 
               <li>
-                <a href="#">IoT</a>
+                <Link href="/shayari/motivational">Motivational</Link>
               </li>
             </ul>
           </li>
 
           <li className="nav__item">
-            <h2 className="nav__title">Legal</h2>
+            <h2 className="nav__title">Contact</h2>
 
             <ul className="nav__ul">
               <li>
-                <a href="#">Privacy Policy</a>
+                <Link href="/booking">Booking</Link>
               </li>
 
               <li>
-                <a href="#">Terms of Use</a>
+                <Link href="/">Contact</Link>
               </li>
 
               <li>
-                <a href="#">Sitemap</a>
+                <Link href="/">NewsLetter</Link>
               </li>
             </ul>
           </li>
         </ul>
 
         <div className="legal">
-          <p>&copy; 2019 Something. All rights reserved.</p>
+          <p>&copy; 2024 AAA. All rights reserved.</p>
 
           <div className="legal__links">
-            <span>
-              Made with <span className="heart">♥</span> remotely from Anywhere
-            </span>
+            <span>All rights are Under AAA</span>
           </div>
         </div>
       </footer>

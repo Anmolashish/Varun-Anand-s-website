@@ -16,9 +16,7 @@ export default function layout({ children }) {
               <Link className="nav-tabs" href={"/dashboard/shayari"}>
                 <div className="dashboard-option">Shayari</div>
               </Link>
-              <Link className="nav-tabs" href={"/dashboard/events"}>
-                <div className="dashboard-option">Events</div>
-              </Link>
+
               <Link className="nav-tabs" href={"/dashboard/booking"}>
                 <div className="dashboard-option">Booking</div>
               </Link>
