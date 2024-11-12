@@ -47,6 +47,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <Head>
         <title>Varun Anand - Portfolio</title>
+        <link rel="icon" href="/Images/logo1.png" type="image/png" />
       </Head>
       <body className={`${gowunBatang.variable}`}>
         {/* Loading Bar */}

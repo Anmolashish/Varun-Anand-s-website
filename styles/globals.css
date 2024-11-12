@@ -1205,7 +1205,6 @@ p {
   height: fit-content;
   position: relative;
   display: flex;
-  background-color: yellow;
 }
 
 .video-section {

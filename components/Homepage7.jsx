@@ -9,14 +9,14 @@ export default function Homepage7() {
     instagramScript.async = true;
     document.body.appendChild(instagramScript);
 
-    const twitterScript = document.createElement("script");
-    twitterScript.src = "https://platform.twitter.com/widgets.js";
-    twitterScript.async = true;
-    document.body.appendChild(twitterScript);
+    const xScript = document.createElement("script");
+    xScript.src = "https://platform.twitter.com/widgets.js";
+    xScript.async = true;
+    document.body.appendChild(xScript);
 
     return () => {
       document.body.removeChild(instagramScript);
-      document.body.removeChild(twitterScript);
+      document.body.removeChild(xScript);
     };
   }, []);
 
@@ -69,18 +69,23 @@ export default function Homepage7() {
           </blockquote>
         </div>
 
-        {/* Twitter Feed */}
-        <div className="social-feed twitter-feed">
-          <h2 className="social-heading">Twitter</h2>
-          <a
-            className="twitter-timeline"
-            href="https://twitter.com/akshaykumar?ref_src=twsrc%5Etfw"
-            data-tweet-limit="5"
-            data-theme="light"
-            data-chrome="noheader nofooter noborders"
+        {/* X (formerly Twitter) Post */}
+        <div className="social-feed x-feed">
+          <h2 className="social-heading">X</h2>
+          <blockquote
+            className="twitter-tweet"
+            data-dnt="true"
+            align="center"
+            style={{
+              width: "100%",
+              maxWidth: "500px",
+              margin: "auto",
+            }}
           >
-            Loading tweets...
-          </a>
+            <a href="https://twitter.com/VarunAn77588633/status/1530439895067439105?ref_src=twsrc%5Etfw">
+              May 28, 2022
+            </a>
+          </blockquote>
         </div>
       </div>
     </div>

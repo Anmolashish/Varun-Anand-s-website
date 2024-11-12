@@ -5,10 +5,8 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <link
-          href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
-          rel="stylesheet"
-        />
+        <title>Varun Anand - Portfolio</title>
+        <link rel="icon" href="/Images/logo1.png" type="image/png" />
       </Head>
       <Component {...pageProps} />
     </>
