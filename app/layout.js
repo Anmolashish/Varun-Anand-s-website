@@ -1,14 +1,8 @@
-"use client";
 import "../styles/globals.css";
-import Head from "next/head";
 import { Gowun_Batang } from "next/font/google";
-import Navbar from "components/Navbar";
-import { usePathname } from "next/navigation";
-import NewsLetter from "components/NewsLetter";
-import HomeFooter from "components/HomeFooter";
 import { ShayariProvider } from "context/ShayariContext";
-import LoadingBar from "react-top-loading-bar";
-import { useEffect, useState } from "react";
+import Loader from "components/Loader";
+import Head from "next/head";
 
 // Load the Gowun Batang font
 const gowunBatang = Gowun_Batang({
@@ -17,52 +11,29 @@ const gowunBatang = Gowun_Batang({
   variable: "--font-geist-mono", // Set your custom CSS variable if needed
 });
 
+export const metadata = {
+  title: "Varun Anand - Portfolio",
+  description:
+    "Explore the portfolio of Varun Anand, featuring a showcase of his poetic works, creative expressions, and event performances. Discover the artistic journey of a talented shayar through his literary achievements.",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+    shortcut: "/android-chrome-192x192.png",
+  },
+};
+
 export default function RootLayout({ children }) {
-  const pathname = usePathname();
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    // Start the loading bar when the pathname changes
-    setProgress(30);
-
-    // Complete the loading bar after a short delay
-    const timeout = setTimeout(() => {
-      setProgress(100);
-    }, 500); // Adjust the delay as needed
-
-    // Clean up the timeout when the component unmounts or the pathname changes
-    return () => clearTimeout(timeout);
-  }, [pathname]);
-
-  const hiddenPaths = [
-    "/dashboard",
-    "/dashboard/contact",
-    "/dashboard/booking",
-    "/dashboard/shayari/shayari-form",
-    "/dashboard/shayari",
-  ];
-  const shouldHideComponents = hiddenPaths.includes(pathname);
-
   return (
     <html lang="en">
       <Head>
-        <title>Varun Anand - Portfolio</title>
-        <link rel="icon" href="/Images/logo1.png" type="image/png" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
       </Head>
       <body className={`${gowunBatang.variable}`}>
         {/* Loading Bar */}
-        <LoadingBar
-          color="#af4c4c"
-          progress={progress}
-          onLoaderFinished={() => setProgress(0)} // Reset progress when finished
-          height={3} // Customize the height of the bar
-        />
+        <Loader />
 
-        {/* Conditionally render Navbar, NewsLetter, and HomeFooter */}
-        {!shouldHideComponents && <Navbar />}
+        {/* Context Provider */}
         <ShayariProvider>{children}</ShayariProvider>
-        {!shouldHideComponents && <NewsLetter />}
-        {!shouldHideComponents && <HomeFooter />}
       </body>
     </html>
   );

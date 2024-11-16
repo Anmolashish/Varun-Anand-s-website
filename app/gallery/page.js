@@ -1,5 +1,14 @@
 import Image from "next/image";
 import React from "react";
+import Navbar from "components/Navbar";
+import NewsLetter from "@/components/NewsLetter";
+import HomeFooter from "@/components/HomeFooter";
+
+export const metadata = {
+  title: "Varun Anand - Gallery",
+  description:
+    "Explore the gallery of Varun Anand, showcasing a captivating collection of his poetic expressions, event highlights, and heartfelt recitations. Dive into a visual journey celebrating his artistry as a shayar.",
+};
 
 export default function Gallery() {
   const imgSrc = [
@@ -172,39 +181,45 @@ export default function Gallery() {
       alt: "Image 1",
       text: "Jashan-E-Rekhta Delhi",
     },
-    
   ];
 
   return (
-    <div>
-      <div className="gallery-container">
-        <div className="intro-gallery text-center">
-          <h1>Gallary</h1>
-        </div>
+    <>
+      <Navbar />
+      <div>
+        <div className="gallery-container">
+          <div className="intro-gallery text-center">
+            <h1>Gallary</h1>
+          </div>
 
-        {/* <p>
+          {/* <p>
           यह गैलरी मेरे दिल की बातों का वो आईना है, जिसे मैंने अल्फ़ाज़ और
           तस्वीरों के संगम से सजाया है। हर शेर, हर नज़्म एक एहसास है, जो मैंने
           अपनी आँखों से देखा और दिल से महसूस किया है।{" "}
         </p> */}
 
-        <div className="gallery">
-          {imgSrc.map((img) => {
-            return (
-              <figure className="gallery__thumb" key={img.id}>
-                <Image
-                  src={`/Images/${img.src}`}
-                  alt={img.alt}
-                  className="gallery__image"
-                  width={500}
-                  height={500}
-                />
-                <figcaption className="gallery__caption">{img.text}</figcaption>
-              </figure>
-            );
-          })}
+          <div className="gallery">
+            {imgSrc.map((img) => {
+              return (
+                <figure className="gallery__thumb" key={img.id}>
+                  <Image
+                    src={`/Images/${img.src}`}
+                    alt={img.alt}
+                    className="gallery__image"
+                    width={500}
+                    height={500}
+                  />
+                  <figcaption className="gallery__caption">
+                    {img.text}
+                  </figcaption>
+                </figure>
+              );
+            })}
+          </div>
         </div>
       </div>
-    </div>
+      <NewsLetter />
+      <HomeFooter />
+    </>
   );
 }

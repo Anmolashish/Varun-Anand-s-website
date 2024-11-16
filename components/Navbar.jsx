@@ -84,7 +84,11 @@ export default function Navbar() {
               </Link>
             </div>
             <div className="navbar-option">
-              <Link className="nav-tabs" href="/shayari" onClick={closeNavbar}>
+              <Link
+                className="nav-tabs"
+                href="/dashboard/booking"
+                onClick={closeNavbar}
+              >
                 SHAYARI
               </Link>
             </div>

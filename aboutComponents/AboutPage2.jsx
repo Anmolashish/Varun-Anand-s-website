@@ -1,4 +1,6 @@
 "use client";
+import Image from "next/image";
+import Link from "next/link";
 import { useEffect } from "react";
 
 export default function AboutPage2() {
@@ -29,6 +31,9 @@ export default function AboutPage2() {
     };
   }, []);
 
+  const width = 500;
+  const height = 500;
+
   return (
     <div className="about-page2">
       <div className="about-section about-heading-container">
@@ -36,11 +41,12 @@ export default function AboutPage2() {
         <div className="about-shayar-container">
           <div className="about-shayar-content">
             <div className="about-shayar-left">
-              <img
-                src="Images/IMG-20240925-WA0007.jpg"
+              <Image
+                src="/Images/IMG-20240925-WA0007.jpg"
                 alt="Varun Anand"
                 className="about-shayar-image"
-                loading="lazy"
+                width={width}
+                height={height}
               />
             </div>
             <div className="about-shayar-right">
@@ -52,7 +58,9 @@ export default function AboutPage2() {
                 carries a depth that resonates with the audience, making him a
                 celebrated name in the world of poetry.
               </p>
-              <button className="read-more-button">Read More</button>
+              <Link href={"/shayari"}>
+                <button className="read-more-button">Read More</button>
+              </Link>
             </div>
           </div>
         </div>
@@ -63,11 +71,12 @@ export default function AboutPage2() {
         <div className="about-shayar-container">
           <div className="about-shayar-content">
             <div className="about-shayar-left tilt-right">
-              <img
-                src="Images/scroll-image4.jpg"
+              <Image
+                src="/Images/scroll-image4.jpg"
                 alt="Varun Anand"
                 className="about-shayar-image"
-                loading="lazy"
+                width={width}
+                height={height}
               />
             </div>
 
@@ -80,7 +89,9 @@ export default function AboutPage2() {
                 impact on the hearts of his audience verses that weave together
                 stories, emotions, and vivid imagery.
               </p>
-              <button className="read-more-button">Read More</button>
+              <Link href={"/shayari"}>
+                <button className="read-more-button">Read More</button>
+              </Link>
             </div>
           </div>
         </div>
@@ -90,11 +101,12 @@ export default function AboutPage2() {
         <div className="about-shayar-container">
           <div className="about-shayar-content">
             <div className="about-shayar-left">
-              <img
-                src="Images/scroll-image1.jpg"
+              <Image
+                src="/Images/scroll-image1.jpg"
                 alt="Varun Anand"
                 className="about-shayar-image"
-                loading="lazy"
+                width={width}
+                height={height}
               />
             </div>
             <div className="about-shayar-right">
@@ -106,7 +118,9 @@ export default function AboutPage2() {
                 thoughts and emotions. Varun’s Nazam reflects his deep
                 sensitivity and understanding of life’s nuances, crafting.
               </p>
-              <button className="read-more-button">Read More</button>
+              <Link href={"/shayari"}>
+                <button className="read-more-button">Read More</button>
+              </Link>
             </div>
           </div>
         </div>

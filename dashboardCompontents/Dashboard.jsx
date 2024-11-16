@@ -16,9 +16,7 @@ export default function Dashboard(props) {
           {heading}
         </div>
         <Link className="nav-tabs" href={link}>
-          <div className="form-button">
-            <div className="form-button">{props.id} form</div>
-          </div>
+          <div className="form-button">{props.id} form</div>
         </Link>
       </div>
       <div className="dashboard-table-container">

@@ -2570,6 +2570,7 @@ textarea {
   padding: 10px;
   display: flex;
   flex-direction: column;
+  transition: all 0.5s ease-in-out;
 }
 
 .dashboard-data {
@@ -2579,7 +2580,7 @@ textarea {
 }
 
 .dashboard-options-heading {
-  font-size: clamp(20px, 3vw, 30px);
+  font-size: clamp(15px, 3vw, 30px);
   text-align: center;
   padding: 5px;
 }
@@ -2611,10 +2612,12 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: clamp(12px, 3vw, 1rem);
 }
 
 .dashboard-content-header {
   display: flex;
+
   padding: 15px 30px;
   justify-content: space-between;
   align-items: center;
@@ -2709,13 +2712,49 @@ textarea {
   width: 80%;
 }
 
+.dashboard-heading {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+}
+
+.hamburger-2 {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .dashboard-options {
     display: none;
+    transition: all 0.5s ease-in-out;
   }
 
   .dashboard-data {
     width: 100%;
+  }
+
+  .dashboard-header {
+    justify-content: space-between;
+  }
+
+  .hide-sidebar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(255, 254, 251);
+    height: 100%;
+    border-radius: 0px;
+    transition: all 0.5s ease-in-out;
+    width: auto;
+  }
+
+  .hamburger-2 {
+    display: flex;
   }
 }
 .shayari-containers {

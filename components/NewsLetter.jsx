@@ -1,6 +1,6 @@
 export default function NewsLetter() {
   return (
-    <div className="newsletter">
+    <form className="newsletter">
       <div className="subscribe">
         <h2 className="subscribe__title">Lets keep in touch</h2>
         <p className="subscribe__copy">
@@ -12,17 +12,20 @@ export default function NewsLetter() {
             type="email"
             className="form__email"
             placeholder="Enter your email address"
+            required
           />
-          <button className="form__button">Send</button>
+          <button type="submit" className="form__button">
+            Send
+          </button>
         </div>
         <div className="notice">
-          <input type="checkbox" />
+          <input type="checkbox" required />
           <span className="notice__copy ">
             I agree to my email address being stored and uses to recieve monthly
             newsletter.
           </span>
         </div>
       </div>
-    </div>
+    </form>
   );
 }
