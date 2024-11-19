@@ -418,7 +418,14 @@ export const ShayariProvider = ({ children }) => {
 
     const startIndex = paginationIndexes[keyword] || 0; // Initialize if undefined
     const endIndex = startIndex + CHUNK_SIZE;
-    return keywordGroups[keyword].slice(startIndex, endIndex);
+
+    // Reverse the data for "latest" keyword
+    const data =
+      keyword === "latest"
+        ? [...keywordGroups[keyword]].reverse()
+        : keywordGroups[keyword];
+
+    return data.slice(startIndex, endIndex);
   }
 
   function loadMoreForKeyword(keyword) {

@@ -11,7 +11,10 @@ export default function ShayariCalling(props) {
       <div className="shayari-container">
         <div style={{ alignItems: "center" }}>
           <span className="shayari-number">{props.id}</span>
-          <span className="shayari-text">{props.shayariname}</span>
+          <span className="shayari-text">
+            {props.shayariname.charAt(0).toUpperCase() +
+              props.shayariname.slice(1)}
+          </span>
           <p className="shayari-author">- Varun Anand</p>
         </div>
         <div

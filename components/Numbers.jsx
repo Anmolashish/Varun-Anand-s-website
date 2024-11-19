@@ -42,7 +42,7 @@ export default function Numbers() {
       <section className="counter-section">
         <div className="counter-container">
           <div className="counter-item">
-            <h2 className="counter" data-target="70000"></h2>
+            <h2 className="counter" data-target="100000"></h2>
             <p>Followers</p>
           </div>
           <div className="counter-item">

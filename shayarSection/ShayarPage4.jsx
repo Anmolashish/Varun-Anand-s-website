@@ -39,7 +39,10 @@ export default function ShayariDetailPage(props) {
     <div style={{ background: "#f7e7bb", height: "auto" }}>
       <div className="shayari-containers">
         <div className="shayari-data">
-          <h1 className="shayari-heading">{selectedShayari.shayariname}</h1>
+          <h1 className="shayari-heading">
+            {selectedShayari.shayariname.charAt(0).toUpperCase() +
+              selectedShayari.shayariname.slice(1)}
+          </h1>
           <p className="shayari-texts">
             {showUrdu ? selectedShayari.urdushayari : selectedShayari.shayari}
           </p>
