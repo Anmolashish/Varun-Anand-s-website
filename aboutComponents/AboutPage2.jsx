@@ -3,6 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 
+// Static imports for images
+import image1 from "@/public/Images/IMG-20240925-WA0007.jpg";
+import image2 from "@/public/Images/scroll-image4.jpg";
+import image3 from "@/public/Images/scroll-image1.jpg";
+
 export default function AboutPage2() {
   useEffect(() => {
     const sections = document.querySelectorAll(".about-section");
@@ -22,9 +27,7 @@ export default function AboutPage2() {
       }
     );
 
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
+    sections.forEach((section) => observer.observe(section));
 
     return () => {
       sections.forEach((section) => observer.unobserve(section));
@@ -36,17 +39,18 @@ export default function AboutPage2() {
 
   return (
     <div className="about-page2">
+      {/* First section */}
       <div className="about-section about-heading-container">
-        {/* <h1 className="about-heading">My Story</h1> */}
         <div className="about-shayar-container">
           <div className="about-shayar-content">
             <div className="about-shayar-left">
               <Image
-                src="/Images/IMG-20240925-WA0007.jpg"
+                src={image1}
                 alt="Varun Anand"
                 className="about-shayar-image"
                 width={width}
                 height={height}
+                placeholder="blur"
               />
             </div>
             <div className="about-shayar-right">
@@ -72,22 +76,22 @@ export default function AboutPage2() {
           <div className="about-shayar-content">
             <div className="about-shayar-left tilt-right">
               <Image
-                src="/Images/scroll-image4.jpg"
+                src={image2}
                 alt="Varun Anand"
                 className="about-shayar-image"
                 width={width}
                 height={height}
+                placeholder="blur"
               />
             </div>
-
             <div className="about-shayar-right tilt-left">
               <h2 className="about-shayar-title">A Poet of Ghazals</h2>
               <p className="about-shayar-text">
-                Varun Anands ghazals evoke deep emotions and take listeners on a
-                poetic journey. With his unique style, he crafts soulful ghazals
-                that blend tradition with modern emotion, leaving a lasting
-                impact on the hearts of his audience verses that weave together
-                stories, emotions, and vivid imagery.
+                Varun Anand's ghazals evoke deep emotions and take listeners on
+                a poetic journey. With his unique style, he crafts soulful
+                ghazals that blend tradition with modern emotion, leaving a
+                lasting impact on the hearts of his audience—verses that weave
+                together stories, emotions, and vivid imagery.
               </p>
               <Link href={"/shayari"}>
                 <button className="read-more-button">Read More</button>
@@ -96,17 +100,19 @@ export default function AboutPage2() {
           </div>
         </div>
       </div>
+
       {/* Third section */}
       <div className="about-section about-heading-container">
         <div className="about-shayar-container">
           <div className="about-shayar-content">
             <div className="about-shayar-left">
               <Image
-                src="/Images/scroll-image1.jpg"
+                src={image3}
                 alt="Varun Anand"
                 className="about-shayar-image"
                 width={width}
                 height={height}
+                placeholder="blur"
               />
             </div>
             <div className="about-shayar-right">
@@ -116,7 +122,7 @@ export default function AboutPage2() {
                 resonate with the human experience. Unlike traditional forms of
                 poetry, Nazam allows for a more free-flowing expression of
                 thoughts and emotions. Varun’s Nazam reflects his deep
-                sensitivity and understanding of life’s nuances, crafting.
+                sensitivity and understanding of life’s nuances.
               </p>
               <Link href={"/shayari"}>
                 <button className="read-more-button">Read More</button>

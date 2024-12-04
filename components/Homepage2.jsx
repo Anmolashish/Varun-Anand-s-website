@@ -1,15 +1,17 @@
 import Image from "next/image";
+import stageImage from "@/public/Images/IMG-20240925-WA0003.jpg";
 
 export default function Homepage2() {
   return (
     <div className="home-page2">
       <div className="image-about-section">
         <Image
-          src="/Images/IMG-20240925-WA0003.jpg"
+          src={stageImage}
           alt="Varun Anand Stage Image"
           width={1000}
           height={500}
           className="about-section-image"
+          placeholder="blur" // Enables the blur effect
         />
       </div>
       <div className="text-about-section">

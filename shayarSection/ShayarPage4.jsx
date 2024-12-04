@@ -1,42 +1,61 @@
 "use client";
 import { useContext, useState } from "react";
 import { ShayariData } from "context/ShayariContext";
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+  LinkedinShareButton,
+  FacebookIcon,
+  TwitterIcon,
+  WhatsappIcon,
+  LinkedinIcon,
+} from "next-share";
 
 export default function ShayariDetailPage(props) {
   const slug = props.heading;
-  const { shayaris } = useContext(ShayariData); // Access shayaris from context
+  const { shayaris } = useContext(ShayariData);
 
   const selectedShayari = shayaris.find((shayari) => {
     const generatedSlug = shayari.shayariname
       .toLowerCase()
-      .replace(/[,\s]+/g, "-") // Replace spaces and commas with dashes
+      .replace(/[,\s]+/g, "-")
       .replace(/[^\w\-]+/g, "");
     return generatedSlug === slug;
   });
 
-  const [showUrdu, setShowUrdu] = useState(false); // initial state it false for urdu so default in hindi
+  const [showUrdu, setShowUrdu] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+  const [showSharePopup, setShowSharePopup] = useState(false);
 
   if (!selectedShayari)
     return (
-      <p>
-        Yahin pe khatam hoti hai shayari ki baat, Fir aayenge hum naye alfaaz ke
-        saath.
-      </p>
+      <div style={{ background: "#f7e7bb", height: "auto" }}>
+        <div className="shayari-containers">
+          <div className="shayari-data">
+            <p>
+              Yahin pe khatam hoti hai shayari ki baat, Fir aayenge hum naye
+              alfaaz ke saath.
+            </p>
+          </div>
+        </div>
+      </div>
     );
 
   const copyText = () => {
     navigator.clipboard.writeText(
       showUrdu ? selectedShayari.urdushayari : selectedShayari.shayari
     );
-    alert("Shayari copied!");
+    setShowAlert(true);
+    setTimeout(() => setShowAlert(false), 2000);
   };
 
-  const urduChange = () => {
-    setShowUrdu(!showUrdu); // it change the value each current time
+  const toggleSharePopup = () => {
+    setShowSharePopup(!showSharePopup);
   };
 
   return (
-    <div style={{ background: "#f7e7bb", height: "auto" }}>
+    <div style={{ background: "#f7e7bb", height: "fit-content" }}>
       <div className="shayari-containers">
         <div className="shayari-data">
           <h1 className="shayari-heading">
@@ -46,18 +65,35 @@ export default function ShayariDetailPage(props) {
           <p className="shayari-texts">
             {showUrdu ? selectedShayari.urdushayari : selectedShayari.shayari}
           </p>
+
+          {showAlert && (
+            <div className="info">
+              <div className="info__icon">...</div>
+              <div className="info__title">Shayari copied!</div>
+            </div>
+          )}
+
           <div
             style={{
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               gap: "15px",
-              marginTop: "40px",
+              margin: "20px",
             }}
           >
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              <div className="button-container">
-                <button type="button" className="share-button">
+            <div className="button-container">
+              <div
+                style={{
+                  position: "relative",
+                }}
+              >
+                {/* Share Button */}
+                <button
+                  type="button"
+                  className="share-button"
+                  onClick={toggleSharePopup}
+                >
                   <span className="button__text">Share</span>
                   <span className="button__icon">
                     <svg
@@ -106,14 +142,66 @@ export default function ShayariDetailPage(props) {
                     </svg>
                   </span>
                 </button>
+
+                {/* Share Popup */}
+                {showSharePopup && (
+                  <div
+                    className="share-popup"
+                    style={{
+                      position: "absolute",
+                      top: "-80px",
+                      left: "50%",
+                      transform: "translateX(-50%)",
+                      background: "white",
+                      border: "1px solid #ddd",
+                      borderRadius: "10px",
+                      boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+                      padding: "10px",
+                      zIndex: 10,
+                      display: "flex",
+                      gap: "10px",
+                    }}
+                  >
+                    <FacebookShareButton
+                      url={window.location.href}
+                      quote={`Read Varun Anand's "${selectedShayari.shayariname}"`}
+                    >
+                      <FacebookIcon size={32} round />
+                    </FacebookShareButton>
+                    <TwitterShareButton
+                      url={window.location.href}
+                      title={`Read Varun Anand's "${selectedShayari.shayariname}"`}
+                    >
+                      <TwitterIcon size={32} round />
+                    </TwitterShareButton>
+                    <WhatsappShareButton
+                      url={window.location.href}
+                      title={`Read Varun Anand's "${selectedShayari.shayariname}"`}
+                      separator=":: "
+                    >
+                      <WhatsappIcon size={32} round />
+                    </WhatsappShareButton>
+                    <LinkedinShareButton
+                      url={window.location.href}
+                      summary={selectedShayari.shayariname}
+                      title={`Read Varun Anand's "${selectedShayari.shayariname}"`}
+                    >
+                      <LinkedinIcon size={32} round />
+                    </LinkedinShareButton>
+                  </div>
+                )}
               </div>
-            </a>
-            <button className="button2" onClick={copyText}>
-              Copy
-            </button>
-            <button className="button2" onClick={urduChange}>
-              {showUrdu ? "Hindi" : "Urdu"}
-            </button>
+
+              <button className="button2" onClick={copyText}>
+                Copy
+              </button>
+              <button
+                className="button2"
+                onClick={() => setShowUrdu(!showUrdu)}
+              >
+                {showUrdu ? "Hindi" : "Urdu"}
+              </button>
+            </div>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import mainImage from "@/public/Images/main-image.jpg";
 
 export default function Homepage1() {
   return (
@@ -13,12 +14,11 @@ export default function Homepage1() {
         <div className="overlay-image">
           <Image
             className="overlay-main-image"
-            src="/Images/main-image.jpg"
+            src={mainImage}
             alt="Front image"
-            width={1000}
-            height={1000}
+            width={800}
+            height={800}
             placeholder="blur"
-            blurDataURL="/Images/main-image.jpg"
           />
         </div>
         <div className="content">

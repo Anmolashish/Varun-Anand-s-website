@@ -1,9 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
 
+// Importing images statically
+import scrollImage1 from "@/public/Images/scroll-image1.jpg";
+import scrollImage2 from "@/public/Images/scroll-image2.jpg";
+import scrollImage3 from "@/public/Images/scroll-image3.jpg";
+import scrollImage4 from "@/public/Images/scroll-image4.jpg";
+import scrollImage5 from "@/public/Images/scroll-image5.jpg";
+import scrollImage6 from "@/public/Images/scroll-image6.jpg";
+import scrollImage7 from "@/public/Images/scroll-image7.jpg";
+import scrollImage8 from "@/public/Images/scroll-image8.jpg";
+
 export default function Homepage4() {
   const width = 500;
   const height = 500;
+
   return (
     <div className="home-page4">
       <div className="images">
@@ -11,37 +22,41 @@ export default function Homepage4() {
           <div className="image-div">
             <Image
               className="image"
-              src="/Images/scroll-image1.jpg"
-              alt="image"
+              src={scrollImage1}
+              alt="Image 1"
               width={width}
               height={height}
+              placeholder="blur"
             />
           </div>
           <div className="image-div">
             <Image
               className="image"
-              src="/Images/scroll-image2.jpg"
-              alt="image"
+              src={scrollImage2}
+              alt="Image 2"
               width={width}
               height={height}
+              placeholder="blur"
             />
           </div>
           <div className="image-div">
             <Image
               className="image"
-              src="/Images/scroll-image3.jpg"
-              alt="image"
+              src={scrollImage3}
+              alt="Image 3"
               width={width}
               height={height}
+              placeholder="blur"
             />
           </div>
           <div className="image-div">
             <Image
               className="image"
-              src="/Images/scroll-image4.jpg"
-              alt="image"
+              src={scrollImage4}
+              alt="Image 4"
               width={width}
               height={height}
+              placeholder="blur"
             />
           </div>
         </div>
@@ -49,37 +64,41 @@ export default function Homepage4() {
           <div className="image-div">
             <Image
               className="image"
-              src="/Images/scroll-image5.jpg"
-              alt="image"
+              src={scrollImage5}
+              alt="Image 5"
               width={width}
               height={height}
+              placeholder="blur"
             />
           </div>
           <div className="image-div">
             <Image
               className="image"
-              src="/Images/scroll-image6.jpg"
-              alt="image"
+              src={scrollImage6}
+              alt="Image 6"
               width={width}
               height={height}
+              placeholder="blur"
             />
           </div>
           <div className="image-div">
             <Image
               className="image"
-              src="/Images/scroll-image7.jpg"
-              alt="image"
+              src={scrollImage7}
+              alt="Image 7"
               width={width}
               height={height}
+              placeholder="blur"
             />
           </div>
           <div className="image-div">
             <Image
               className="image"
-              src="/Images/scroll-image8.jpg"
-              alt="image"
+              src={scrollImage8}
+              alt="Image 8"
               width={width}
               height={height}
+              placeholder="blur"
             />
           </div>
         </div>
