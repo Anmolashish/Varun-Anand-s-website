@@ -1,17 +1,14 @@
 "use client";
 import React, { useState } from "react";
-import Link from "next/link";
-
 import {
   FacebookShareButton,
   TwitterShareButton,
   WhatsappShareButton,
-  LinkedinShareButton,
   FacebookIcon,
   TwitterIcon,
   WhatsappIcon,
-  LinkedinIcon,
 } from "next-share";
+import Link from "next/link";
 
 export default function ShayariCalling(props) {
   const [showAlert, setShowAlert] = useState(false);
@@ -26,6 +23,10 @@ export default function ShayariCalling(props) {
   const toggleSharePopup = () => {
     setShowSharePopup(!showSharePopup);
   };
+
+  const title = `Read Varun Anand's "${
+    props.shayariname.charAt(0).toUpperCase() + props.shayariname.slice(1)
+  }"`;
 
   return (
     <div className="per-shayari-container">
@@ -72,6 +73,7 @@ export default function ShayariCalling(props) {
           </span>
           <p className="shayari-author">- Varun Anand</p>
         </div>
+
         <div
           style={{
             display: "flex",
@@ -80,7 +82,12 @@ export default function ShayariCalling(props) {
             gap: "15px",
           }}
         >
-          <div className="button-container">
+          <div
+            className="button-container"
+            style={{
+              position: "relative",
+            }}
+          >
             <button
               type="button"
               className="share-button"
@@ -136,61 +143,34 @@ export default function ShayariCalling(props) {
             </button>
 
             {showSharePopup && (
-              <div
-                className="share-popup"
-                style={{
-                  position: "absolute",
-                  top: "-80px",
-                  left: "50%",
-                  transform: "translateX(-50%)",
-                  background: "white",
-                  border: "1px solid #ddd",
-                  borderRadius: "10px",
-                  boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
-                  padding: "10px",
-                  zIndex: 10,
-                  display: "flex",
-                  gap: "10px",
-                }}
-              >
-                <FacebookShareButton
-                  url={window.location.href}
-                  quote={`Read Varun Anand's "${
-                    props.shayariname.charAt(0).toUpperCase() +
-                    props.shayariname.slice(1)
-                  }"`}
+              <div className="share-popup">
+                <div
+                  className="share-icons"
+                  style={{
+                    position: "absolute",
+                    top: "-80px",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    background: "white",
+                    border: "1px solid #ddd",
+                    borderRadius: "10px",
+                    boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+                    padding: "10px",
+                    zIndex: 10,
+                    display: "flex",
+                    gap: "10px",
+                  }}
                 >
-                  <FacebookIcon size={32} round />
-                </FacebookShareButton>
-                <TwitterShareButton
-                  url={window.location.href}
-                  title={`Read Varun Anand's "${
-                    props.shayariname.charAt(0).toUpperCase() +
-                    props.shayariname.slice(1)
-                  }"`}
-                >
-                  <TwitterIcon size={32} round />
-                </TwitterShareButton>
-                <WhatsappShareButton
-                  url={window.location.href}
-                  title={`Read Varun Anand's "${
-                    props.shayariname.charAt(0).toUpperCase() +
-                    props.shayariname.slice(1)
-                  }"`}
-                  separator=":: "
-                >
-                  <WhatsappIcon size={32} round />
-                </WhatsappShareButton>
-                <LinkedinShareButton
-                  url={window.location.href}
-                  summary={selectedShayari.shayariname}
-                  title={`Read Varun Anand's "${
-                    props.shayariname.charAt(0).toUpperCase() +
-                    props.shayariname.slice(1)
-                  }"`}
-                >
-                  <LinkedinIcon size={32} round />
-                </LinkedinShareButton>
+                  <FacebookShareButton url={window.location.href} quote={title}>
+                    <FacebookIcon size={32} round />
+                  </FacebookShareButton>
+                  <TwitterShareButton url={window.location.href} title={title}>
+                    <TwitterIcon size={32} round />
+                  </TwitterShareButton>
+                  <WhatsappShareButton url={window.location.href} title={title}>
+                    <WhatsappIcon size={32} round />
+                  </WhatsappShareButton>
+                </div>
               </div>
             )}
           </div>
@@ -207,6 +187,7 @@ export default function ShayariCalling(props) {
             <button className="button2">More...</button>
           </Link>
         </div>
+
         <img
           src="/Images/border-top-image1.png"
           alt="DESIGN"

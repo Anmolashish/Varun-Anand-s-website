@@ -181,13 +181,6 @@ export default function ShayariDetailPage(props) {
                     >
                       <WhatsappIcon size={32} round />
                     </WhatsappShareButton>
-                    <LinkedinShareButton
-                      url={window.location.href}
-                      summary={selectedShayari.shayariname}
-                      title={`Read Varun Anand's "${selectedShayari.shayariname}"`}
-                    >
-                      <LinkedinIcon size={32} round />
-                    </LinkedinShareButton>
                   </div>
                 )}
               </div>
