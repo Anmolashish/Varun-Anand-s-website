@@ -15,6 +15,7 @@ import {
 
 export default function ShayariCalling(props) {
   const [showAlert, setShowAlert] = useState(false);
+  const [showSharePopup, setShowSharePopup] = useState(false);
 
   const copyText = () => {
     navigator.clipboard.writeText(props.shayari);
