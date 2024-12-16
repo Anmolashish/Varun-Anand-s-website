@@ -1,9 +1,13 @@
 "use client";
-import React, { createContext, useState } from "react";
+import { getAllShayri } from "@/server";
+import { useQuery } from "@tanstack/react-query";
+import React, { createContext, useEffect, useState } from "react";
 
 export const ShayariData = createContext();
 
 export const ShayariProvider = ({ children }) => {
+  const [newShayriData, setNewShayriData] = useState(null);
+
   const data = [
     {
       id: 1,
@@ -54,6 +58,25 @@ export const ShayariProvider = ({ children }) => {
       imgsrc: "politic.jpeg",
     },
   ];
+
+  const {
+    data: shayriData,
+    isLoading,
+    isError,
+    error,
+  } = useQuery({
+    queryKey: ["shayari"],
+    queryFn: getAllShayri,
+  });
+
+  useEffect(() => {
+    if (shayriData) {
+      console.log(shayriData);
+      setNewShayriData(shayriData); // This will now log the array of shayari
+    }
+  }, [shayriData]);
+
+  console.log(newShayriData);
 
   const shayaris = [
     {

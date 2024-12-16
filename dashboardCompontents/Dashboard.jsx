@@ -1,14 +1,38 @@
 "use client";
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ShayariData } from "context/ShayariContext";
 import DashboardTable from "./DashboardTable";
 import Link from "next/link";
+import { useQuery } from "@tanstack/react-query";
+import { getAllShayri } from "@/server";
 
 export default function Dashboard(props) {
+  const [newShayriData, setNewShayriData] = useState(null);
   const { formData } = useContext(ShayariData);
   const heading = formData[props.id].heading;
   const columns = [...formData[props.id].headers];
   const link = formData[props.id].links;
+
+  const {
+    data: shayriData,
+    isLoading,
+    isError,
+    error,
+  } = useQuery({
+    queryKey: ["shayari"],
+    queryFn: getAllShayri,
+  });
+
+  console.log(shayriData);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    return <div>Error: {error.message}</div>;
+  }
+
   return (
     <div className="dashboard-container">
       <div className="dashboard-content-header">

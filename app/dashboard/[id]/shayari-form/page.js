@@ -1,4 +1,5 @@
 "use client";
+import { addShayri } from "@/server";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
@@ -24,23 +25,34 @@ export default function ShayariForm() {
   ];
 
   // On form submission
-  const onSubmit = (data) => {
-    // Ensure "Latest" is included in the keywords
-    const keywordsWithLatest = Array.from(
-      new Set([...data.keywords, "latest"])
-    );
+  const onSubmit = async (data) => {
+    try {
+      console.log("hello");
+      // Ensure "Latest" is included in the keywords
 
-    // Add the data to the submittedData array
-    const formattedData = {
-      shayariname: data.heading,
-      keywords: keywordsWithLatest,
-      shayari: data.hindiShayari,
-      urdushayari: data.urduShayari,
-    };
-    setSubmittedData((prev) => [...prev, formattedData]);
+      console.log(data);
+      const keywordsWithLatest = Array.from(
+        new Set([...data.keywords, "latest"])
+      );
 
-    //resets
-    reset();
+      // Add the data to the submittedData array
+      const formattedData = {
+        heading: data.heading,
+        hindiShayari: data.hindiShayari,
+        urduShayari: data.urduShayari,
+        keywords: keywordsWithLatest,
+      };
+
+      console.log(formattedData);
+      setSubmittedData((prev) => [...prev, formattedData]);
+
+      await addShayri(formattedData);
+
+      //resets
+      reset();
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (

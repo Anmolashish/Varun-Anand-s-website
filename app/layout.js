@@ -3,6 +3,7 @@ import { Gowun_Batang } from "next/font/google";
 import { ShayariProvider } from "context/ShayariContext";
 import Loader from "components/Loader";
 import Head from "next/head";
+import ReactQueryProvider from "@/utils/Provider";
 
 // Load the Gowun Batang font
 const gowunBatang = Gowun_Batang({
@@ -33,7 +34,9 @@ export default function RootLayout({ children }) {
         <Loader />
 
         {/* Context Provider */}
-        <ShayariProvider>{children}</ShayariProvider>
+        <ReactQueryProvider>
+          <ShayariProvider>{children}</ShayariProvider>
+        </ReactQueryProvider>
       </body>
     </html>
   );
