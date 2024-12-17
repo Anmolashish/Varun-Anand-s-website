@@ -20,8 +20,8 @@ export default function Homepage5() {
             .map((poem) => (
               <PoemsCalling
                 key={poem.id}
-                heading={poem.shayariname}
-                description={poem.shayari}
+                heading={poem.heading}
+                description={poem.hindiShayari}
               />
             ))}
         </div>

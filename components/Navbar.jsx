@@ -1,20 +1,40 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 
 export default function Navbar() {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
-  // Function to toggle the navbar visibility
+  // Toggle states
   const toggleNavbar = () => setIsNavbarOpen(!isNavbarOpen);
-
-  // Function to close the navbar when a tab is selected
   const closeNavbar = () => setIsNavbarOpen(false);
-
   const openPopup = () => setIsPopupOpen(true);
   const closePopup = () => setIsPopupOpen(false);
+
+  // Handle form changes
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  // Handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Add submission logic here (e.g., API call)
+
+    setFormData({ name: "", email: "", message: "" }); // Reset form
+    closePopup();
+  };
 
   return (
     <>
@@ -29,6 +49,7 @@ export default function Navbar() {
             priority
           />
         </section>
+
         <section className="tabs">
           <div>
             <Link className="nav-tabs" href="/" onClick={closeNavbar}>
@@ -56,6 +77,7 @@ export default function Navbar() {
             </Link>
           </div>
         </section>
+
         <section className="contact-button">
           <div className="button" onClick={openPopup}>
             Contact
@@ -70,6 +92,8 @@ export default function Navbar() {
           </div>
         </section>
       </div>
+
+      {/* Mobile Menu */}
       {isNavbarOpen && (
         <div className="navbar-options">
           <div className="navbar options">
@@ -105,6 +129,7 @@ export default function Navbar() {
         </div>
       )}
 
+      {/* Popup Contact Form */}
       {isPopupOpen && (
         <div className="popupOverlay">
           <div className="popupForm">
@@ -112,22 +137,47 @@ export default function Navbar() {
               ×
             </button>
             <h2>Contact Us</h2>
-            <form>
+            <form onSubmit={handleSubmit}>
+              {/* Full Name */}
               <label htmlFor="name">Full Name:</label>
-              <input type="text" id="name" name="name" required />
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Enter your name"
+                required
+              />
 
+              {/* Email */}
               <label htmlFor="email">Email:</label>
-              <input type="email" id="email" name="email" required />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Enter your email"
+                required
+              />
 
+              {/* Message */}
               <label htmlFor="message">Message:</label>
               <textarea
                 id="message"
                 name="message"
                 rows="4"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Write your message here..."
                 required
               ></textarea>
 
-              <button type="submit">Send Message</button>
+              {/* Submit Button */}
+              <button type="submit" className="submitBtn">
+                Send Message
+              </button>
             </form>
           </div>
         </div>

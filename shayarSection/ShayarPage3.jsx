@@ -39,7 +39,7 @@ export default function ShayariPage3(props) {
             <ShayariCalling
               key={element.id}
               id={index + 1}
-              shayariname={element.shayariname}
+              shayariname={element.heading}
               // sharelink={element.sharelink}
               shayari={element.shayari}
               slug={props.heading}

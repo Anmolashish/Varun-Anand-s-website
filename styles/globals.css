@@ -2572,6 +2572,7 @@ textarea {
   display: flex;
   flex-direction: column;
   transition: all 0.5s ease-in-out;
+  position: relative;
 }
 
 .dashboard-data {
@@ -2887,7 +2888,8 @@ textarea {
     height: 100%;
     border-radius: 0px;
     transition: all 0.5s ease-in-out;
-    width: auto;
+    width: 40%;
+    text-align: center;
   }
 
   .hamburger-2 {
@@ -3059,4 +3061,26 @@ h3 {
 
 .info__close path {
   fill: #fff;
+}
+
+.logout-button {
+  background-color: #af4c4c;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  left: 10%;
+  right: 10%;
+}
+.logout-button:hover {
+  background-color: #d32f2f;
+}
+
+.table-main-background {
+  width: 100%;
+  height: 100vh;
+  background-color: blue;
 }

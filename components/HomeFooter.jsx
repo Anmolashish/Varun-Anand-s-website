@@ -58,7 +58,7 @@ export default function HomeFooter() {
               </li>
 
               <li>
-                <Link href="/shayari/break-up">Break-up</Link>
+                <Link href="/shayari/breakup">Break-up</Link>
               </li>
 
               <li>

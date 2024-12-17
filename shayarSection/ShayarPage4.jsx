@@ -17,7 +17,7 @@ export default function ShayariDetailPage(props) {
   const { shayaris } = useContext(ShayariData);
 
   const selectedShayari = shayaris.find((shayari) => {
-    const generatedSlug = shayari.shayariname
+    const generatedSlug = shayari.heading
       .toLowerCase()
       .replace(/[,\s]+/g, "-")
       .replace(/[^\w\-]+/g, "");
@@ -44,7 +44,7 @@ export default function ShayariDetailPage(props) {
 
   const copyText = () => {
     navigator.clipboard.writeText(
-      showUrdu ? selectedShayari.urdushayari : selectedShayari.shayari
+      showUrdu ? selectedShayari.urduShayari : selectedShayari.hindiShayari
     );
     setShowAlert(true);
     setTimeout(() => setShowAlert(false), 2000);
@@ -59,11 +59,13 @@ export default function ShayariDetailPage(props) {
       <div className="shayari-containers">
         <div className="shayari-data">
           <h1 className="shayari-heading">
-            {selectedShayari.shayariname.charAt(0).toUpperCase() +
-              selectedShayari.shayariname.slice(1)}
+            {selectedShayari.heading.charAt(0).toUpperCase() +
+              selectedShayari.heading.slice(1)}
           </h1>
           <p className="shayari-texts">
-            {showUrdu ? selectedShayari.urdushayari : selectedShayari.shayari}
+            {showUrdu
+              ? selectedShayari.urduShayari
+              : selectedShayari.hindiShayari}
           </p>
 
           {showAlert && (
@@ -164,19 +166,19 @@ export default function ShayariDetailPage(props) {
                   >
                     <FacebookShareButton
                       url={window.location.href}
-                      quote={`Read Varun Anand's "${selectedShayari.shayariname}"`}
+                      quote={`Read Varun Anand's "${selectedShayari.heading}"`}
                     >
                       <FacebookIcon size={32} round />
                     </FacebookShareButton>
                     <TwitterShareButton
                       url={window.location.href}
-                      title={`Read Varun Anand's "${selectedShayari.shayariname}"`}
+                      title={`Read Varun Anand's "${selectedShayari.heading}"`}
                     >
                       <TwitterIcon size={32} round />
                     </TwitterShareButton>
                     <WhatsappShareButton
                       url={window.location.href}
-                      title={`Read Varun Anand's "${selectedShayari.shayariname}"`}
+                      title={`Read Varun Anand's "${selectedShayari.heading}"`}
                       separator=":: "
                     >
                       <WhatsappIcon size={32} round />
