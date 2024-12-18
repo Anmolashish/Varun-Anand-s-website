@@ -1,33 +1,38 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
+import { useForm } from "react-hook-form";
 import Image from "next/image";
 import Navbar from "components/Navbar";
 import NewsLetter from "@/components/NewsLetter";
 import HomeFooter from "@/components/HomeFooter";
+import { addBooking } from "@/server";
 
 export default function Event() {
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    eventDate: "",
-    location: "",
-    message: "",
-    agreeToTerms: false,
-  });
+  // Initialize react-hook-form
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
 
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === "checkbox" ? checked : value,
-    }));
-  };
+  // Form submission handler
+  const onSubmit = async (data) => {
+    console.log("Form Data Submitted:", data);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form Data Submitted:", formData);
-    // Here you can handle the form submission logic (e.g., send data to backend)
+    const formatedData = {
+      fullName: data.fullName,
+      email: data.email,
+      phone: data.phone,
+      eventDate: data.eventDate,
+      location: data.location,
+      message: data.message,
+      agreeToTerms: data.agreeToTerms,
+    };
+
+    await addBooking(formatedData);
+
+    reset();
   };
 
   return (
@@ -45,88 +50,103 @@ export default function Event() {
           </div>
           <div className="formContent">
             <h2>Book Your Event</h2>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit(onSubmit)}>
               {/* Full Name */}
               <div className="inputGroup">
                 <i className="fas fa-user"></i>
                 <input
                   type="text"
-                  name="fullName"
-                  value={formData.fullName}
-                  onChange={handleChange}
+                  {...register("fullName", {
+                    required: "Full name is required",
+                  })}
                   placeholder="Full Name"
-                  required
                 />
+                {errors.fullName && <p>{errors.fullName.message}</p>}
               </div>
+
               {/* Email */}
               <div className="inputGroup">
                 <i className="fas fa-envelope"></i>
                 <input
                   type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
+                  {...register("email", {
+                    required: "Email is required",
+                    pattern: {
+                      value:
+                        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+                      message: "Please enter a valid email",
+                    },
+                  })}
                   placeholder="Email"
-                  required
                 />
+                {errors.email && <p>{errors.email.message}</p>}
               </div>
+
               {/* Phone */}
               <div className="inputGroup">
                 <i className="fas fa-phone"></i>
                 <input
                   type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
+                  {...register("phone", {
+                    required: "Phone number is required",
+                    pattern: {
+                      value:
+                        /^\+?\d{1,4}?[ ]?\(?\d{1,4}?\)?[ ]?\d{1,4}?[ ]?\d{1,4}$/,
+                      message: "Please enter a valid phone number",
+                    },
+                  })}
                   placeholder="+91 Phone Number"
-                  required
                 />
+                {errors.phone && <p>{errors.phone.message}</p>}
               </div>
+
               {/* Event Date */}
               <div className="inputGroup">
                 <i className="fas fa-calendar-alt"></i>
                 <input
                   type="date"
-                  name="eventDate"
-                  value={formData.eventDate}
-                  onChange={handleChange}
+                  {...register("eventDate", {
+                    required: "Event date is required",
+                  })}
                   placeholder="Select Date"
-                  required
                 />
+                {errors.eventDate && <p>{errors.eventDate.message}</p>}
               </div>
+
               {/* Location */}
               <div className="inputGroup">
                 <i className="fas fa-users"></i>
                 <input
                   type="text"
-                  name="location"
-                  value={formData.location}
-                  onChange={handleChange}
+                  {...register("location", {
+                    required: "Location is required",
+                  })}
                   placeholder="Location"
-                  required
                 />
+                {errors.location && <p>{errors.location.message}</p>}
               </div>
+
               {/* Additional Message */}
               <div className="inputGroup">
                 <i className="fas fa-comment"></i>
                 <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
+                  {...register("message")}
                   placeholder="Additional Details or Message"
                 ></textarea>
               </div>
+
               {/* Terms and Conditions */}
               <div className="terms">
                 <input
                   type="checkbox"
-                  name="agreeToTerms"
-                  checked={formData.agreeToTerms}
-                  onChange={handleChange}
-                  required
+                  {...register("agreeToTerms", {
+                    required: "You must agree to the terms",
+                  })}
                 />
                 I agree to the Terms of Service and Privacy Policy.
+                {errors.agreeToTerms && <p>{errors.agreeToTerms.message}</p>}
               </div>
+
               {/* Submit Button */}
               <button type="submit" className="submitBtn">
                 Book Event

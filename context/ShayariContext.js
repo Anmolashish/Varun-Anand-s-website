@@ -183,9 +183,9 @@ export const ShayariProvider = ({ children }) => {
       heading: "Shayari",
       headers: [
         { key: "heading", label: "Heading" },
-        { key: "shayriData", label: "Shayri Data" },
-        { key: "urduShayari", label: "Urdu Shayari" },
         { key: "keywords", label: "Keywords" },
+        { key: "shayriData", label: "Hindi Shayari" },
+        { key: "urduShayari", label: "Urdu Shayari" },
       ],
       data: shayaris, // Dynamic shayaris from state
       links: "/dashboard/shayari/shayari-form",
@@ -199,6 +199,7 @@ export const ShayariProvider = ({ children }) => {
         { key: "date", label: "Date" },
         { key: "location", label: "Location" },
         { key: "message", label: "Message" },
+        { key: "agreed", label: "Agreed" },
       ],
       data: [
         {

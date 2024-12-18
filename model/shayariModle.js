@@ -26,7 +26,9 @@ const postSchema = new mongoose.Schema({
   updated_at: { type: Date, default: Date.now },
 });
 
-// Ensure the model is only created once (important in SSR)
+// Ensure the model is only created once
 const Post = mongoose.models.Post || mongoose.model("Post", postSchema);
 
-export default Post;
+// Export it with the 'wrong' name
+const ShayariModle = Post;
+export default ShayariModle;

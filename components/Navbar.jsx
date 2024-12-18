@@ -2,15 +2,19 @@
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
+import { useForm } from "react-hook-form";
+import { addContact } from "@/server";
 
 export default function Navbar() {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
 
   // Toggle states
   const toggleNavbar = () => setIsNavbarOpen(!isNavbarOpen);
@@ -18,22 +22,21 @@ export default function Navbar() {
   const openPopup = () => setIsPopupOpen(true);
   const closePopup = () => setIsPopupOpen(false);
 
-  // Handle form changes
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
   // Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Add submission logic here (e.g., API call)
+  const onSubmit = async (data) => {
+    console.log("Form Data Submitted:", data);
 
-    setFormData({ name: "", email: "", message: "" }); // Reset form
-    closePopup();
+    const formattedData = {
+      name: data.name, // 'name' is the key in your form
+      email: data.email, // Email address
+      message: data.message, // Message field
+    };
+
+    console.log("Formatted Data:", formattedData);
+    await addContact(formattedData);
+    // Add form submission logic (e.g., API call) here
+    reset(); // Reset form fields
+    closePopup(); // Close popup after submission
   };
 
   return (
@@ -137,42 +140,44 @@ export default function Navbar() {
               ×
             </button>
             <h2>Contact Us</h2>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit(onSubmit)}>
               {/* Full Name */}
               <label htmlFor="name">Full Name:</label>
               <input
                 type="text"
                 id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
                 placeholder="Enter your name"
-                required
+                {...register("name", { required: "Name is required" })}
               />
+              {errors.name && <p className="error">{errors.name.message}</p>}
 
               {/* Email */}
               <label htmlFor="email">Email:</label>
               <input
                 type="email"
                 id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
                 placeholder="Enter your email"
-                required
+                {...register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^\S+@\S+$/i,
+                    message: "Invalid email format",
+                  },
+                })}
               />
+              {errors.email && <p className="error">{errors.email.message}</p>}
 
               {/* Message */}
               <label htmlFor="message">Message:</label>
               <textarea
                 id="message"
-                name="message"
                 rows="4"
-                value={formData.message}
-                onChange={handleChange}
                 placeholder="Write your message here..."
-                required
+                {...register("message", { required: "Message is required" })}
               ></textarea>
+              {errors.message && (
+                <p className="error">{errors.message.message}</p>
+              )}
 
               {/* Submit Button */}
               <button type="submit" className="submitBtn">
