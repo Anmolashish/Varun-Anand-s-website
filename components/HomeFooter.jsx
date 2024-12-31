@@ -87,10 +87,10 @@ export default function HomeFooter() {
         </ul>
 
         <div className="legal">
-          <p>&copy; 2024 AAA. All rights reserved.</p>
+          <p>&copy; 2024 A3 Unity. All rights reserved.</p>
 
           <div className="legal__links">
-            <span>All rights are Under AAA</span>
+            <span>All rights are Under A3 Unity</span>
           </div>
         </div>
       </footer>

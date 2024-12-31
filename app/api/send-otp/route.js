@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 
-const storedEmail = "anmolbatwal18@gmail.com"; // Admin's email stored in .env
+const storedEmail = process.env.EMAIL_USER; // Admin's email stored in .env
 let otpStore = {}; // Temporary storage for OTPs
 
 export async function POST(req) {
