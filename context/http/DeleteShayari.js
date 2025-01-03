@@ -6,7 +6,6 @@ export const useDeleteShayariMutation = () => {
 
   return useMutation({
     mutationFn: async (id) => {
-      console.log(`Deleting Shayari with ID: ${id}`);
       return await deleteShayari(id); // Call backend API
     },
     onSuccess: () => {
