@@ -49,7 +49,8 @@ const getAllShayri = async () => {
 };
 
 const deleteShayari = async (id) => {
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000"; // Set your development URL or production base URL
+  const baseUrl =
+    process.env.NEXT_PUBLIC_API_URL || "https://www.varunanand.in"; // Set your development URL or production base URL
 
   const url = `${baseUrl}/api/shayari/${id}`; // Construct the absolute URL
 

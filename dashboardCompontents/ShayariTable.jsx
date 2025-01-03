@@ -8,7 +8,6 @@ export default function ShayariTable() {
 
   const handleDelete = async (id) => {
     try {
-      console.log(`Attempting to delete Shayari with ID: ${id}`);
       await deleteMutation.mutateAsync(id);
       console.log("Shayari deleted successfully!");
     } catch (err) {
