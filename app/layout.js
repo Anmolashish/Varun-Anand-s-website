@@ -15,7 +15,7 @@ const gowunBatang = Gowun_Batang({
 export const metadata = {
   title: "Varun Anand - Portfolio",
   description:
-    "Explore the portfolio of Varun Anand, featuring a showcase of his poetic works, creative expressions, and event performances. Discover the artistic journey of a talented shayar through his literary achievements.",
+    "Explore the portfolio of Varun Anand, featuring a showcase of his poetic works, creative expressions, and event performances",
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
@@ -27,7 +27,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <head>
+          {/* Meta Tags */}
+          <meta
+            name="google-site-verification"
+            content="bHxyD7lNjW90M2hL32pDRMV5OckATqQpawdeJ04Qez8"
+          />
+          <link rel="icon" href="/favicon.ico" sizes="any" />
+          <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+          <link rel="icon" href="/android-chrome-192x192.png" />
+        </head>
       </Head>
       <body className={`${gowunBatang.variable}`}>
         {/* Loading Bar */}

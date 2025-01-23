@@ -35,16 +35,22 @@ export default function ShayariPage3(props) {
             {basicData[props.heading].heading}
           </h1>
 
-          {shayari.map((element, index) => (
-            <ShayariCalling
-              key={element.id}
-              id={index + 1}
-              shayariname={element.heading}
-              // sharelink={element.sharelink}
-              shayari={element.shayari}
-              slug={props.heading}
-            />
-          ))}
+          {shayari.length !== 0 ? (
+            shayari.map((element, index) => (
+              <ShayariCalling
+                key={element.id}
+                id={index + 1}
+                shayariname={element.heading}
+                // sharelink={element.sharelink}
+                shayari={element.shayari}
+                slug={props.heading}
+              />
+            ))
+          ) : (
+            <p className="empty-page shayari-page-empty-page">
+              No shayari available
+            </p>
+          )}
         </div>
         <div
           className="see-more"

@@ -14,16 +14,20 @@ export default function Homepage5() {
       <div className="home-page5-container">
         <div className="page5-heading">Writings</div>
         <div className="poems-section">
-          {poems
-            .slice(-5)
-            .reverse()
-            .map((poem) => (
-              <PoemsCalling
-                key={poem.id}
-                heading={poem.heading}
-                description={poem.hindiShayari}
-              />
-            ))}
+          {poems.length !== 0 ? (
+            poems
+              .slice(-5)
+              .reverse()
+              .map((poem) => (
+                <PoemsCalling
+                  key={poem.id}
+                  heading={poem.heading}
+                  description={poem.hindiShayari}
+                />
+              ))
+          ) : (
+            <p className="empty-page">There is no shayari here</p>
+          )}
         </div>
         <Link className="nav-tabs" href={"/shayari"}>
           <div className="see-more">
