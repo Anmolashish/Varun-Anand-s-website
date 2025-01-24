@@ -33,6 +33,7 @@ export default function RootLayout({ children }) {
             name="google-site-verification"
             content="bHxyD7lNjW90M2hL32pDRMV5OckATqQpawdeJ04Qez8"
           />
+          <meta name="robots" content="noindex, nofollow" />
           <link rel="icon" href="/favicon.ico" sizes="any" />
           <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
           <link rel="icon" href="/android-chrome-192x192.png" />

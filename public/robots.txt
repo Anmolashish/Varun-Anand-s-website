@@ -2,6 +2,12 @@
 User-agent: *
 Allow: /
 
+# *
+User-agent: *
+Disallow: /dashboard
+Disallow: /dashboard/*
+Disallow: /login
+
 # Host
 Host: https://www.varunanand.in
 
