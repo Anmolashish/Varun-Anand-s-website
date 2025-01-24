@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.varunanand.in
+
+# Sitemaps
+Sitemap: https://www.varunanand.in/sitemap.xml
