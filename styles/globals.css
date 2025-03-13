@@ -219,6 +219,7 @@
   font-size: clamp(12px, 3vw, 1.2rem);
   margin: 0px 30px;
   color: white;
+  font-weight: 400;
 }
 
 .white {

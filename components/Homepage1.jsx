@@ -22,10 +22,10 @@ export default function Homepage1() {
           />
         </div>
         <div className="content">
-          <div className="heading-text">Varun Anand</div>
-          <div className="underline-text">
+          <h1 className="heading-text">Varun Anand</h1>
+          <p className="underline-text">
             Dive into the world of words, rhythm, and soul-stirring poetry!
-          </div>
+          </p>
 
           <div className="button-text">
             <Link className="white" href={"/about"}>

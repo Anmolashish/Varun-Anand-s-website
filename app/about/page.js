@@ -14,6 +14,7 @@ export default function about() {
   return (
     <div>
       <Navbar />
+
       <About />
       <NewsLetter />
       <HomeFooter />

@@ -90,7 +90,18 @@ export default function HomeFooter() {
           <p>&copy; 2024 A3 Unity. All rights reserved.</p>
 
           <div className="legal__links">
-            <span>All rights are Under A3 Unity</span>
+            <span>
+              Want your own website? Contact{" "}
+              <a href="https://www.instagram.com/a3_unity/profilecard/?igsh=dnQwbXZ4dDM0MXo4">
+                <img
+                  width="13"
+                  height="13"
+                  src="https://img.icons8.com/material-outlined/50/228BE6/instagram-new--v1.png"
+                  alt="instagram-new--v1"
+                />
+                A3_unity
+              </a>{" "}
+            </span>
           </div>
         </div>
       </footer>
