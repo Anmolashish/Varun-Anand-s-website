@@ -87,19 +87,19 @@ export default function HomeFooter() {
         </ul>
 
         <div className="legal">
-          <p>&copy; 2024 A3 Unity. All rights reserved.</p>
+          <p>&copy; 2024 Atrinity. All rights reserved.</p>
 
           <div className="legal__links">
             <span>
               Want your own website? Contact{" "}
-              <a href="https://www.instagram.com/a3_unity/profilecard/?igsh=dnQwbXZ4dDM0MXo4">
+              <a href="https://atrinity-portfolio.vercel.app/">
                 <img
                   width="13"
                   height="13"
                   src="https://img.icons8.com/material-outlined/50/228BE6/instagram-new--v1.png"
                   alt="instagram-new--v1"
                 />
-                A3_unity
+                Atrinity
               </a>{" "}
             </span>
           </div>
